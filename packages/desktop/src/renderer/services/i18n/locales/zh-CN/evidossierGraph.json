@@ -1,0 +1,260 @@
+{
+  "page": {
+    "title": "成果关系图",
+    "description": "以只读方式展示交付包版本之间的业务来源：每条边都从一个来源版本指向精确使用它的目标版本。关系由审查、比对和修订等业务操作产生；拖拽只用于平移画布，不会改变关系。",
+    "projectLabel": "项目",
+    "openProject": "打开项目",
+    "noProjectsTitle": "还没有项目",
+    "noProjectsText": "成果关系图由项目内已交付的包版本构成。",
+    "viewProjects": "查看项目",
+    "noProjectSelected": "请选择一个项目以查看其成果关系图。"
+  },
+  "toolbar": {
+    "relationTypes": "关系类型",
+    "taskTypes": "任务类型",
+    "searchLabel": "查找交付包",
+    "searchPlaceholder": "包编号或标题",
+    "searchMatches": "匹配 {{count}} 个交付包",
+    "searchNoMatch": "没有匹配的交付包",
+    "expandAll": "展开全部版本",
+    "collapseAll": "全部收起版本",
+    "resetFilters": "重置筛选与展开",
+    "counts": "{{packages}} 个交付包 · {{versions}} 个正式版本 · {{relations}} 条关系",
+    "canvasCounts": "画布上 {{nodes}} 个节点 · {{edges}} 条边",
+    "graphHint": "方向为来源版本 → 目标版本。关系只由业务操作产生，不能通过拖拽改变。",
+    "graphHintShort": "只读来源关系"
+  },
+  "canvas": {
+    "aria": "成果关系图画布",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "fit": "适应画布",
+    "center": "居中显示",
+    "centerShort": "居中",
+    "showNodeList": "节点列表",
+    "hideNodeList": "收起节点列表",
+    "nodeList": "可访问的节点列表",
+    "nodeListHint": "与画布相同的节点，可用键盘操作。",
+    "relationLegend": "关系",
+    "taskLegend": "任务类型",
+    "contextMenu": "节点操作",
+    "panHint": "拖拽平移 · 滚轮缩放 · 关系为只读"
+  },
+  "node": {
+    "packageAria": "交付包 {{code}}，{{title}}，共 {{count}} 个版本",
+    "versionAria": "交付包 {{code}} 的版本 {{label}}",
+    "versionMeta": "{{count}} 个版本 · 当前 {{version}}",
+    "versionMetaNoCurrent": "{{count}} 个版本 · 尚无正式版本",
+    "versionNode": "版本",
+    "open": "打开",
+    "openAria": "打开 {{label}}",
+    "expandVersions": "展开版本",
+    "collapseVersionsAria": "收起 {{code}} 的版本",
+    "noVersionsHint": "该包还没有正式版本，暂无可展开内容。"
+  },
+  "edge": {
+    "aria": "{{source}} {{relation}} {{target}}"
+  },
+  "create": {
+    "revise": "基于此版本发起修订",
+    "review": "基于此版本发起审查",
+    "compare": "与其它版本比对"
+  },
+  "details": {
+    "title": "详情",
+    "close": "关闭详情",
+    "emptyTitle": "选择节点或关系",
+    "emptyText": "查看精确的两端版本、范围与时间。打开包或版本不会改变当前快照。",
+    "hintDirection": "边始终从来源版本指向目标版本。",
+    "hintReadonly": "关系是只读的业务事实；拖拽只会平移画布。",
+    "hintExpand": "展开交付包可以查看 v1、v2 等正式版本及其精确两端。",
+    "packageTitle": "交付包",
+    "versionTitle": "版本",
+    "edgeTitle": "关系",
+    "source": "来源版本",
+    "target": "目标版本",
+    "relationCount": "记录的关系数",
+    "aggregatedRelations": "这条边聚合了 {{count}} 条关系，精确两端可能不同：",
+    "endpointUnavailable": "记录中的一端版本已不可访问。关系仍保留当时引用的版本标识，但内容无法打开。",
+    "edgeNote": "打开端点不会改变该关系或本版本快照。",
+    "openSource": "打开来源",
+    "openTarget": "打开目标",
+    "openSourcePackage": "打开来源包",
+    "openTargetPackage": "打开目标包",
+    "openPackage": "打开交付包",
+    "openVersion": "查看该版本",
+    "taskKind": "任务类型",
+    "project": "项目",
+    "currentVersion": "当前正式版本",
+    "noVersion": "尚无正式版本",
+    "versionCount": "正式版本数",
+    "updatedAt": "最近更新",
+    "lastSubmitted": "最近提交",
+    "changeNote": "变更说明",
+    "baseVersion": "基准版本",
+    "submittedAt": "提交时间",
+    "submittedBy": "提交人",
+    "status": "状态",
+    "current": "当前",
+    "none": "无",
+    "unavailable": "该对象在当前数据中不可用。",
+    "branchHint": "分支操作会在创建向导中预先选中这个精确版本。"
+  },
+  "empty": {
+    "title": "还没有成果关系",
+    "text": "关系来自独立审查、版本比对或明确发起的修订。该项目的交付包之间尚无关系。",
+    "startReview": "发起审查",
+    "viewPackages": "查看交付包"
+  },
+  "emptyFiltered": {
+    "title": "当前筛选下没有关系",
+    "text": "清除或重置筛选即可重新查看项目关系图。"
+  },
+  "emptyPackages": {
+    "title": "该项目还没有交付包",
+    "text": "先生成与修改包；之后的审查和比对包会在关系图中连接精确版本。",
+    "create": "创建交付包",
+    "viewPackages": "查看交付包"
+  },
+  "emptyProject": {
+    "title": "项目不存在",
+    "text": "该项目不存在，或已不在演示数据中。",
+    "back": "返回项目列表"
+  },
+  "payload": {
+    "factItems": "{{count}} 条事实与要求",
+    "openQuestions": "未决问题",
+    "openItems": "未完成项",
+    "partialDraft": "该草稿是部分完成的工作状态。",
+    "paragraphCount": "{{count}} 个段落",
+    "coverageChecked": "已检查覆盖",
+    "coverageUnchecked": "未检查",
+    "coverageUncheckable": "无法检查",
+    "findingTotal": "问题数",
+    "limitations": "限制说明",
+    "reviewedVersion": "审查对象 {{code}} · {{label}}",
+    "unmatchedBase": "未对应（基准端）",
+    "unmatchedTarget": "未对应（目标端）",
+    "added": "新增",
+    "removed": "删除",
+    "modified": "修改",
+    "uncertain": "无法确认",
+    "comparisonInput": "{{role}}输入：{{code}} · {{label}}",
+    "outlineStatus": {
+      "planned": "计划中",
+      "confirmed": "已确认",
+      "needs_review": "需复核"
+    }
+  },
+  "versionPage": {
+    "projectFallback": "项目",
+    "notFoundTitle": "版本不存在或不可访问",
+    "notFoundText": "该版本不存在、不属于该交付包，或已不在演示数据中。",
+    "backToPackage": "返回交付包",
+    "backToProjects": "返回项目列表",
+    "continueEditDone": "已基于 {{label}} 创建新的工作草稿",
+    "meta": {
+      "submittedAt": "提交时间",
+      "submittedBy": "提交人",
+      "baseVersion": "基准版本",
+      "project": "项目",
+      "package": "交付包",
+      "latest": "最新正式版本",
+      "none": "无"
+    },
+    "readonly": {
+      "title": "只读快照",
+      "text": "已交付版本不可修改：输入、阶段成果与交付物在此冻结。如需变更，请使用「继续修改」在同一包内创建新的工作草稿。",
+      "partialTitle": "部分交付快照",
+      "partialText": "该版本按部分交付提交，未完成范围已记录，快照同样保持只读。",
+      "historicalHint": "这不是最新正式版本（最新为 {{latest}}），本快照保持原样。"
+    },
+    "actions": {
+      "continueEdit": "继续修改此交付",
+      "startReview": "基于此版本开始审查",
+      "compare": "比较版本"
+    },
+    "tabs": {
+      "aria": "版本快照分区",
+      "deliverable": "交付物",
+      "inputs": "输入依据",
+      "artifacts": "阶段成果",
+      "confirmations": "确认记录",
+      "relations": "来源与后续"
+    },
+    "deliverable": {
+      "title": "交付文件",
+      "hint": "本版本冻结的交付物。",
+      "download": "下载",
+      "downloadDemo": "演示模式不提供真实文件下载。本页的可读预览即演示内容。",
+      "fileName": "文件名",
+      "formatLabel": "格式",
+      "kindLabel": "交付物类型",
+      "pages": "页数",
+      "simulated": "演示环境不生成真实文件；以下可读内容为冻结快照的预览。",
+      "noDocumentTitle": "暂无可读预览",
+      "noDocumentText": "该交付物在演示数据中没有可读正文。",
+      "readonlySuffix": "已交付版本的只读预览",
+      "format": {
+        "docx": "DOCX",
+        "pdf": "PDF",
+        "md": "Markdown",
+        "report": "报告"
+      },
+      "kind": {
+        "document": "文档",
+        "review_report": "审查报告",
+        "comparison_report": "比对报告"
+      }
+    },
+    "inputs": {
+      "title": "冻结的输入依据",
+      "hint": "交付时记录的材料精确版本。不可访问的来源会被明确标出，且不视为已核实依据。",
+      "emptyTitle": "没有记录输入",
+      "emptyText": "该版本未记录材料输入。",
+      "material": "材料",
+      "version": "版本",
+      "usage": "用途",
+      "availability": "可用性",
+      "unavailable": "来源不可访问",
+      "noReadableBody": "无可读正文",
+      "unavailableNote": "有 {{count}} 条记录的输入在当前数据中无法解析，已标为不可访问，不计入已核实依据。"
+    },
+    "artifacts": {
+      "title": "纳入本次快照的阶段成果",
+      "hint": "按本版本实际使用的修订冻结引用的阶段成果。",
+      "emptyTitle": "没有阶段成果",
+      "emptyText": "该版本没有纳入阶段成果。",
+      "revision": "修订 {{revision}}",
+      "snapshotRef": "快照引用",
+      "expand": "展开摘要",
+      "collapse": "收起摘要",
+      "notAvailable": "该阶段成果在当前数据中已不存在；本版本仅保留冻结引用。",
+      "supersededNote": "该修订后来被新修订取代；本快照仍引用当时交付的修订。"
+    },
+    "confirmations": {
+      "title": "确认记录",
+      "hint": "随本版本一起冻结的关键用户确认。",
+      "emptyTitle": "没有确认记录",
+      "emptyText": "该版本未记录用户确认。"
+    },
+    "relations": {
+      "title": "来源与后续",
+      "hint": "本快照周围的精确版本关系。打开端点不会改变本版本。",
+      "viewGraph": "在关系图中查看",
+      "openCounterpart": "打开",
+      "openCounterpartPackage": "打开交付包",
+      "unavailable": "不可访问",
+      "scopePrefix": "范围",
+      "noneIncoming": "没有记录来源关系。",
+      "noneOutgoing": "没有记录后续关系。",
+      "emptyTitle": "没有关系",
+      "emptyText": "该版本尚无记录的跨包关系。"
+    },
+    "continueEdit": {
+      "title": "基于此版本创建工作草稿？",
+      "text": "将在交付包 {{code}} 中基于 {{label}} 创建新的工作草稿。已交付版本保持不变；草稿提交后会形成下一个正式版本。",
+      "historyHint": "{{label}} 不是最新正式版本（{{latest}}）。继续修改会基于 {{label}} 创建新草稿，最新正式版本不受影响。"
+    }
+  }
+}

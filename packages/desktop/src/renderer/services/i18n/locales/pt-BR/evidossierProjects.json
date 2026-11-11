@@ -1,0 +1,276 @@
+{
+  "home": {
+    "title": "Workspace",
+    "description": "Every task is organized around a delivered artifact. Start a package from one of the three task types, or open a project to continue existing work.",
+    "newPackage": "New package",
+    "createProject": "Create project",
+    "entriesTitle": "Start a task",
+    "stats": {
+      "projects": "Projects",
+      "packages": "Packages",
+      "attention": "Waiting for you",
+      "versions": "Formal versions"
+    },
+    "entries": {
+      "generate": {
+        "title": "Generate & revise",
+        "description": "Draft a new document or revise an existing version from selected materials.",
+        "input": "Minimum input: goal + readable materials or a base version",
+        "action": "Start generating"
+      },
+      "review": {
+        "title": "Independent review",
+        "description": "Review an exact material or package version against a review basis.",
+        "input": "Minimum input: version to review + review basis",
+        "action": "Start review"
+      },
+      "compare": {
+        "title": "Version comparison",
+        "description": "Establish section-level correspondence and list what changed between two exact versions.",
+        "input": "Minimum input: two exact versions + comparison direction",
+        "action": "Start comparison"
+      }
+    },
+    "attention": {
+      "title": "Waiting for you",
+      "hint": "Packages that need a decision or input from you",
+      "emptyTitle": "Nothing is waiting for you",
+      "emptyText": "No package is waiting for a decision right now. Start a task or open a project to continue existing work."
+    },
+    "recentProjects": {
+      "title": "Recent projects",
+      "hint": "Most recently updated projects",
+      "emptyTitle": "No projects yet",
+      "emptyText": "This demo workspace has no project. Create the first project to organize materials and packages.",
+      "viewAll": "View all projects"
+    },
+    "recentPackages": {
+      "title": "Recent packages",
+      "hint": "Most recently updated packages across all projects",
+      "emptyTitle": "No packages yet",
+      "emptyText": "Create a package to see it here. Every package belongs to a project.",
+      "viewAll": "View all projects"
+    },
+    "noProjects": {
+      "title": "This demo workspace has no project yet",
+      "text": "Create a project to keep materials and packages together, or try one of the three task types directly. Everything stays in this browser.",
+      "create": "Create the first project"
+    },
+    "projectMeta": {
+      "packages": "{{count}} packages",
+      "materials": "{{count}} materials",
+      "attention": "{{count}} waiting",
+      "updated": "Updated {{time}}"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Projects group materials, packages and delivered versions. Search by name, code or description.",
+    "create": "Create project",
+    "searchPlaceholder": "Search name, code or description",
+    "count": "{{count}} projects",
+    "noMatchTitle": "No matching projects",
+    "noMatchText": "No project matches your search. Clear the search to see all projects.",
+    "clearSearch": "Clear search",
+    "emptyTitle": "No projects yet",
+    "emptyText": "Create the first project to start organizing materials and packages in this demo workspace.",
+    "noDescription": "No description",
+    "open": "Open project",
+    "packages": "Packages",
+    "materials": "Materials",
+    "attention": "Waiting for you",
+    "versions": "Formal versions",
+    "members": "Members",
+    "updated": "Updated",
+    "more": "More actions"
+  },
+  "project": {
+    "crumbHome": "Workspace",
+    "crumbProjects": "Projects",
+    "notFoundTitle": "Project not found",
+    "notFoundText": "This project does not exist or is no longer present in the current demo data.",
+    "backToProjects": "Back to projects",
+    "rename": "Rename project",
+    "newTask": "New task",
+    "createPackage": "Create package",
+    "tabs": {
+      "overview": "Overview",
+      "packages": "Packages",
+      "materials": "Materials",
+      "graph": "Artifact graph"
+    },
+    "tabsLabel": "Project tabs",
+    "loadingGraph": "Loading artifact graph…",
+    "meta": {
+      "code": "Project code",
+      "members": "Members",
+      "updated": "Last updated"
+    },
+    "stats": {
+      "packages": "Packages",
+      "materials": "Materials",
+      "attention": "Waiting for you",
+      "versions": "Formal versions"
+    },
+    "taskbarTitle": "Start a task in this project",
+    "taskbarHint": "The project is preselected; the task wizard asks for the remaining inputs.",
+    "attentionTitle": "Waiting for you",
+    "attentionEmptyTitle": "Nothing is waiting for you",
+    "attentionEmptyText": "This project has no package waiting for a decision.",
+    "recentPackagesTitle": "Recent packages",
+    "recentPackagesEmptyTitle": "No packages yet",
+    "recentPackagesEmptyText": "Create a generate, review or comparison package for this project.",
+    "materialsTitle": "Project materials",
+    "materialsHint": "{{count}} materials in total",
+    "materialsEmptyTitle": "No materials yet",
+    "materialsEmptyText": "Add materials so review and comparison tasks have readable inputs.",
+    "openMaterials": "Open materials",
+    "relationsTitle": "Artifact relations",
+    "relationsHint": "Relations become visible only after a package delivers a formal version.",
+    "relationsCount": "{{count}} relations",
+    "relationsEmptyTitle": "No relations yet",
+    "relationsEmptyText": "Deliver a formal version to create review, revision or comparison relations.",
+    "openGraph": "Open artifact graph",
+    "relationIncoming": "Incoming relations",
+    "relationOutgoing": "Outgoing relations"
+  },
+  "packagesTab": {
+    "searchPlaceholder": "Search package code or title",
+    "kindFilter": "Task type",
+    "statusFilter": "Status",
+    "allKinds": "All types",
+    "allStatuses": "All statuses",
+    "count": "{{visible}} / {{total}} packages",
+    "columns": {
+      "code": "Code",
+      "title": "Package",
+      "kind": "Type",
+      "status": "Status",
+      "version": "Current formal version",
+      "relations": "Sources",
+      "updated": "Last updated",
+      "actions": "Actions"
+    },
+    "noVersion": "No formal version",
+    "relationsCount": "{{count}} source relations",
+    "emptyTitle": "No packages in this project",
+    "emptyText": "Create a package to start a task. Every package keeps its own stages, versions and relations.",
+    "noMatchTitle": "No matching packages",
+    "noMatchText": "No package matches the current filters.",
+    "resetFilters": "Reset filters"
+  },
+  "materials": {
+    "add": "Add material",
+    "searchPlaceholder": "Search material name or note",
+    "kindFilter": "Material type",
+    "usageFilter": "Usage",
+    "allKinds": "All types",
+    "allUsages": "All usages",
+    "count": "{{visible}} / {{total}} materials",
+    "columns": {
+      "name": "Material",
+      "kind": "Type",
+      "usage": "Usage",
+      "origin": "Origin / version",
+      "parse": "Parse status",
+      "updated": "Last updated",
+      "actions": "Actions"
+    },
+    "versionLabel": "v{{number}} · {{count}} versions",
+    "versionSingle": "v{{number}}",
+    "generatedBy": "Generated by {{code}}",
+    "actions": {
+      "preview": "Preview",
+      "addVersion": "Add new version",
+      "delete": "Delete",
+      "more": "More actions"
+    },
+    "addVersion": {
+      "title": "Add a new version?",
+      "text": "A new version will be added and become the current version. Previous versions are kept in the version history.",
+      "ok": "Add version",
+      "done": "New material version added. It is waiting to be parsed."
+    },
+    "delete": {
+      "title": "Delete this material?",
+      "text": "The material is removed from this project. Historical packages that referenced it are not deleted, but their references will show as unavailable.",
+      "ok": "Delete material",
+      "done": "Material deleted"
+    },
+    "emptyTitle": "No materials in this project",
+    "emptyText": "A generate task can start without materials. Review and comparison tasks need readable materials.",
+    "noMatchTitle": "No matching materials",
+    "noMatchText": "No material matches the current search and filters.",
+    "resetFilters": "Reset filters",
+    "drawer": {
+      "title": "Material details",
+      "close": "Close",
+      "metaKind": "Type",
+      "metaUsage": "Usage",
+      "metaOrigin": "Origin",
+      "metaVersion": "Current version",
+      "metaFileName": "File name",
+      "metaSize": "File size",
+      "metaAdded": "Added",
+      "metaUpdated": "Last updated",
+      "metaUsageNote": "Usage note",
+      "noUsageNote": "No usage note",
+      "parseTitle": "Parse status",
+      "partialTitle": "Partially parsed",
+      "partialText": "Only part of this file could be extracted. Read the parse note before using it as evidence.",
+      "failedTitle": "Content cannot be read",
+      "pendingTitle": "No readable content yet",
+      "failedText": "This version failed to parse, so no content is shown. The demo environment does not parse real files.",
+      "pendingText": "This version has not been parsed yet. The demo environment does not upload or parse files, so there is no readable content.",
+      "parsingText": "Parsing is still in progress in this demo. No content is readable yet.",
+      "noDocumentText": "This version has no readable document attached.",
+      "simulateTitle": "Demo-only parse actions",
+      "simulateHint": "These buttons only change the local simulated parse state. No file is uploaded or parsed.",
+      "simulateParsed": "Simulate successful parse",
+      "simulateFailed": "Simulate parse failure",
+      "simulateParsedDone": "Parse state changed to parsed (simulated)",
+      "simulateFailedDone": "Parse state changed to failed (simulated)",
+      "versionHistory": "Version history",
+      "current": "Current"
+    },
+    "addModal": {
+      "title": "Add material",
+      "name": "Material name",
+      "namePlaceholder": "e.g. Requirements specification v1.2",
+      "nameRequired": "Material name is required",
+      "kind": "Material type",
+      "usage": "Usage",
+      "usageNote": "Usage note",
+      "usageNotePlaceholder": "Why this material is in the project (optional)",
+      "file": "Local file",
+      "chooseFile": "Choose local file",
+      "fileChosen": "{{name}} · {{size}}",
+      "clearFile": "Clear file",
+      "uploadHint": "Demo environment: only the local file name and size are recorded. No file is uploaded to a server and no parsing is performed.",
+      "submit": "Add material",
+      "done": "Material added. Its first version is waiting to be parsed."
+    }
+  },
+  "dialog": {
+    "createProject": {
+      "title": "Create project",
+      "name": "Project name",
+      "namePlaceholder": "e.g. Smart campus technical proposal",
+      "nameRequired": "Project name is required",
+      "description": "Description",
+      "descriptionPlaceholder": "What this project is for (optional)",
+      "submit": "Create project",
+      "done": "Project created"
+    },
+    "renameProject": {
+      "title": "Rename project",
+      "name": "Project name",
+      "nameRequired": "Project name is required",
+      "submit": "Save",
+      "done": "Project renamed"
+    }
+  },
+  "labels": {
+    "open": "Open"
+  }
+}

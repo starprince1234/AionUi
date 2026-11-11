@@ -1,0 +1,379 @@
+{
+  "brand": {
+    "name": "Evidossier",
+    "suffix": "材料成果工作台",
+    "tagline": "以成果为中心的 AI 专业材料工作台"
+  },
+  "demo": {
+    "chip": "演示模式",
+    "bannerTitle": "演示环境 · 数据为模拟数据",
+    "bannerText": "本页所有交付包、材料、问题与报告均为本地演示数据。AI 执行在浏览器中模拟，不调用 Codex、不上传文件、不解析真实文档。",
+    "executionSimulated": "模拟执行",
+    "mockArtifact": "模拟阶段成果",
+    "mockReport": "模拟报告",
+    "savedLocally": "演示状态保存在当前浏览器",
+    "reset": "重置演示数据",
+    "resetConfirmTitle": "重置演示数据？",
+    "resetConfirmText": "你在演示中产生的所有改动（新建交付包、编辑成果、提交版本）都会被丢弃，并恢复初始示例场景。此操作不可撤销。",
+    "resetDone": "演示数据已恢复到初始场景",
+    "seedLabel": "初始场景"
+  },
+  "nav": {
+    "home": "工作台首页",
+    "projects": "项目",
+    "recentPackages": "最近交付包",
+    "projectOverview": "项目概览",
+    "packages": "交付包",
+    "materials": "材料",
+    "graph": "成果关系图",
+    "backToProjects": "全部项目",
+    "workspace": "工作区",
+    "demandAttention": "待你处理",
+    "allTasks": "全部任务"
+  },
+  "taskKind": {
+    "generate": "生成与修改",
+    "review": "独立审查",
+    "compare": "版本比对",
+    "generateShort": "生成",
+    "reviewShort": "审查",
+    "compareShort": "比对"
+  },
+  "status": {
+    "package": {
+      "draft": "草稿",
+      "in_progress": "进行中",
+      "awaiting_user": "等待你确认",
+      "paused": "已暂停",
+      "failed": "执行失败",
+      "delivered": "已交付",
+      "pending_supplement": "待补充输入"
+    },
+    "stage": {
+      "not_started": "未开始",
+      "running": "执行中",
+      "awaiting_confirmation": "待确认",
+      "completed": "已完成",
+      "needs_review": "需复核",
+      "failed": "失败"
+    },
+    "artifact": {
+      "candidate": "候选",
+      "pending_confirmation": "待确认",
+      "confirmed": "已确认",
+      "needs_review": "需复核",
+      "failed": "失败",
+      "superseded": "已被取代"
+    },
+    "execution": {
+      "idle": "空闲",
+      "running": "执行中",
+      "paused": "已暂停",
+      "failed": "失败",
+      "completed": "完成"
+    },
+    "version": {
+      "delivered": "正式交付",
+      "partial": "未完成交付"
+    },
+    "parse": {
+      "parsed": "已解析",
+      "parsing": "解析中",
+      "failed": "解析失败",
+      "partial": "部分解析",
+      "pending": "待解析"
+    },
+    "coverage": {
+      "checked": "已检查",
+      "unchecked": "未检查",
+      "uncheckable": "无法检查",
+      "not_applicable": "不适用"
+    },
+    "mapping": {
+      "confirmed": "已确认对应",
+      "candidate": "候选对应",
+      "uncertain": "不确定",
+      "none": "无法对应"
+    },
+    "diff": {
+      "added": "新增",
+      "removed": "删除",
+      "modified": "修改",
+      "moved": "移动",
+      "uncertain": "无法确认"
+    },
+    "fact": {
+      "confirmed": "已确认",
+      "pending": "待确认",
+      "conflict": "存在冲突",
+      "missing": "缺失"
+    },
+    "finding": {
+      "open": "待处理",
+      "confirmed": "已确认",
+      "uncertain": "待核实"
+    },
+    "validation": {
+      "pass": "通过",
+      "warn": "警告",
+      "fail": "未通过",
+      "manual": "需人工检查",
+      "not_checked": "未检查"
+    },
+    "severity": {
+      "high": "高",
+      "medium": "中",
+      "low": "低",
+      "info": "提示"
+    }
+  },
+  "relation": {
+    "reviewed": "审查了",
+    "compared": "比较了",
+    "revised_from": "修订自",
+    "based_on": "依据了",
+    "derived_from": "派生自",
+    "source": "来源",
+    "target": "目标",
+    "incoming": "来源与依据",
+    "outgoing": "后续成果",
+    "viewGraph": "在成果关系图中查看",
+    "sentence": "{{target}} {{relation}} {{source}}",
+    "createdAt": "建立时间",
+    "scope": "范围",
+    "exactVersions": "精确版本"
+  },
+  "comparisonRole": {
+    "baseline": "基准端",
+    "target": "目标端",
+    "additional": "附加输入"
+  },
+  "materialUsage": {
+    "fact": "本次事实",
+    "requirement": "当前要求",
+    "template": "参考模板",
+    "style_reference": "写法参考",
+    "case": "历史案例",
+    "review_basis": "审查依据",
+    "pending": "用途待确认"
+  },
+  "materialOrigin": {
+    "uploaded": "上传材料",
+    "generated": "阶段生成"
+  },
+  "materialKind": {
+    "document": "文档",
+    "spreadsheet": "表格",
+    "drawing": "图纸",
+    "image": "图片",
+    "template": "模板",
+    "archive": "压缩包"
+  },
+  "action": {
+    "create": "创建",
+    "cancel": "取消",
+    "confirm": "确认",
+    "save": "保存",
+    "saveDraft": "保存草稿",
+    "edit": "编辑",
+    "back": "返回",
+    "open": "打开",
+    "close": "关闭",
+    "retry": "重试",
+    "pause": "暂停",
+    "resume": "恢复",
+    "submit": "提交",
+    "send": "发送",
+    "next": "下一步",
+    "previous": "上一步",
+    "search": "搜索",
+    "filter": "筛选",
+    "reset": "重置",
+    "viewAll": "查看全部",
+    "viewDetails": "查看详情",
+    "openPackage": "打开交付包",
+    "openVersion": "打开该版本",
+    "continueEdit": "继续修改此交付",
+    "startReview": "基于此版本开始审查",
+    "compareVersions": "比较版本",
+    "submitVersion": "提交正式版本",
+    "startRevision": "创建修订任务",
+    "add": "添加",
+    "addMaterial": "添加材料",
+    "upload": "选择本地文件",
+    "select": "选择",
+    "remove": "移除",
+    "expand": "展开",
+    "collapse": "收起",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "fitView": "适应画布",
+    "center": "居中",
+    "refresh": "刷新",
+    "download": "下载",
+    "copy": "复制",
+    "rename": "重命名",
+    "more": "更多",
+    "clear": "清除",
+    "apply": "应用",
+    "continue": "继续",
+    "goTo": "前往",
+    "viewSource": "查看来源",
+    "chooseFromMaterials": "从项目材料中选择",
+    "createPackage": "创建工作包",
+    "startReviewPackage": "开始审查",
+    "startComparison": "开始比对",
+    "submitReport": "提交报告",
+    "createRevisionFromFindings": "按所选问题创建修订任务",
+    "createRevisionFromDifferences": "按所选差异创建修订任务",
+    "accept": "采纳",
+    "keepMine": "保留我的编辑",
+    "keepCandidate": "采用运行结果",
+    "rerun": "基于最新输入重跑",
+    "resolveConflict": "处理冲突",
+    "confirmAndContinue": "确认并继续",
+    "submitPartial": "作为未完成交付提交",
+    "resumeFromCheckpoint": "从检查点恢复",
+    "endReview": "结束审查",
+    "endComparison": "结束比对"
+  },
+  "common": {
+    "loading": "加载中…",
+    "loadingWorkspace": "正在加载工作区…",
+    "loadFailed": "加载失败",
+    "empty": "暂无内容",
+    "notFound": "未找到",
+    "notFoundText": "请求的对象不存在，或已不在当前演示数据中。",
+    "version": "版本",
+    "versionNo": "版本 {{number}}",
+    "currentVersion": "当前正式版本",
+    "workingDraft": "工作草稿",
+    "formalVersion": "正式版本",
+    "history": "版本历史",
+    "readOnly": "只读",
+    "readOnlyHint": "正式交付版本不可修改。继续编辑会创建新的工作草稿。",
+    "updatedAt": "更新时间",
+    "createdAt": "创建时间",
+    "updatedBy": "更新人",
+    "createdBy": "创建人",
+    "by": "由 {{name}}",
+    "none": "无",
+    "unknown": "未知",
+    "optional": "可选",
+    "required": "必填",
+    "simulated": "模拟",
+    "current": "当前",
+    "inputs": "输入依据",
+    "stageResults": "阶段成果",
+    "deliverables": "交付物",
+    "summary": "摘要",
+    "status": "状态",
+    "note": "说明",
+    "details": "详情",
+    "actions": "操作",
+    "all": "全部",
+    "noResults": "没有匹配结果",
+    "selectAll": "全选",
+    "selected": "已选择",
+    "count": "{{count}}",
+    "items": "{{count}} 项",
+    "justNow": "刚刚",
+    "readMore": "展开阅读",
+    "showLess": "收起",
+    "conflict": "冲突",
+    "fileSize": "{{size}}",
+    "pageCount": "{{count}} 页",
+    "confirmDialog": "确认操作",
+    "dismiss": "忽略",
+    "you": "你",
+    "demoUser": "演示用户",
+    "group": "分组",
+    "type": "类型",
+    "scope": "范围",
+    "progress": "进度",
+    "done": "已完成",
+    "pending": "待处理",
+    "lastUpdated": "最近更新",
+    "openInNew": "打开",
+    "prototypeNotice": "该区域属于前端 V1 演示，数据与 AI 输出均为模拟。",
+    "noAdditionalInfo": "无更多信息"
+  },
+  "time": {
+    "today": "今天",
+    "yesterday": "昨天",
+    "minutesAgo": "{{count}} 分钟前",
+    "hoursAgo": "{{count}} 小时前",
+    "daysAgo": "{{count}} 天前"
+  },
+  "confirmation": {
+    "recorded": "确认已记录",
+    "by": "由 {{name}} 确认",
+    "at": "于 {{time}}"
+  },
+  "stageName": {
+    "generate": {
+      "goal": "目标与材料理解",
+      "facts": "事实与要求整理",
+      "retrieval": "检索选材",
+      "plan": "大纲或修改计划",
+      "draft": "草稿编制",
+      "validation": "校验",
+      "delivery": "保存与交付"
+    },
+    "review": {
+      "scope": "范围与材料理解",
+      "basis": "审查依据整理",
+      "coverage": "覆盖规划",
+      "inspection": "执行检查",
+      "recheck": "问题复核",
+      "report": "报告与交付"
+    },
+    "compare": {
+      "versions": "版本与范围确定",
+      "mapping": "对应关系建立",
+      "extraction": "差异提取",
+      "explanation": "语义说明",
+      "recheck": "差异复核",
+      "report": "保存与交付"
+    }
+  },
+  "stageDescription": {
+    "generate": {
+      "goal": "明确交付目标，确认材料可读范围与缺口。",
+      "facts": "整理事实、要求、冲突与缺口，并标注来源。",
+      "retrieval": "按权限和用途筛选证据，记录无法定位的内容。",
+      "plan": "把事实与证据整理为大纲，或限定范围的修改计划。",
+      "draft": "形成工作草稿，或可审阅的局部修改候选。",
+      "validation": "检查要求覆盖、引用来源、授权边界与文件可读性。",
+      "delivery": "冻结输入、阶段成果与交付物，形成正式包版本。"
+    },
+    "review": {
+      "scope": "确定待审材料及版本、审查目的与可检查范围。",
+      "basis": "列出适用的要求、规范与用户规则，标注不确定项。",
+      "coverage": "把范围拆成可跟踪检查项，写明无法检查的原因。",
+      "inspection": "逐项检查并记录问题、证据与原文位置。",
+      "recheck": "复核引用能否回到原文，合并重复并保留待核实问题。",
+      "report": "交付问题、实际覆盖、限制与未完成范围。"
+    },
+    "compare": {
+      "versions": "选定精确基准版本与目标版本、比较方向与范围。",
+      "mapping": "建立章节、条款、表格的对应关系并标注置信程度。",
+      "extraction": "提取新增、删除、修改、移动与无法对应项。",
+      "explanation": "说明实际变化，不把差异自动定性为缺陷。",
+      "recheck": "复核两端引用、覆盖范围与不确定对应。",
+      "report": "交付差异清单、冻结输入、比较范围与限制。"
+    }
+  },
+  "artifactKind": {
+    "fact_list": "事实与要求清单",
+    "outline": "大纲／修改计划",
+    "draft": "工作草稿",
+    "validation": "校验结果",
+    "coverage_plan": "覆盖计划",
+    "findings": "问题清单",
+    "review_report": "审查报告",
+    "mapping": "对应关系表",
+    "differences": "差异清单",
+    "comparison_report": "比对报告"
+  }
+}

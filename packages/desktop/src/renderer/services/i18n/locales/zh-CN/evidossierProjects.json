@@ -1,0 +1,276 @@
+{
+  "home": {
+    "title": "工作台",
+    "description": "所有任务都围绕交付成果组织。你可以直接发起三类任务之一，或打开项目继续已有工作。",
+    "newPackage": "新建交付包",
+    "createProject": "创建项目",
+    "entriesTitle": "发起任务",
+    "stats": {
+      "projects": "项目",
+      "packages": "交付包",
+      "attention": "待你处理",
+      "versions": "正式版本"
+    },
+    "entries": {
+      "generate": {
+        "title": "生成与修改",
+        "description": "基于选定材料编制新文档，或按授权范围修改已有版本。",
+        "input": "最少输入：目标 + 可读材料或修改基准版本",
+        "action": "开始生成"
+      },
+      "review": {
+        "title": "独立审查",
+        "description": "依据审查基准，对确定的材料版本或交付版本执行独立审查。",
+        "input": "最少输入：待审版本 + 审查依据",
+        "action": "开始审查"
+      },
+      "compare": {
+        "title": "版本比对",
+        "description": "建立章节级对应关系，列出两个确定版本之间实际发生的变化。",
+        "input": "最少输入：两个确定版本 + 比对方向",
+        "action": "开始比对"
+      }
+    },
+    "attention": {
+      "title": "待你处理",
+      "hint": "需要你做出决定或补充输入的交付包",
+      "emptyTitle": "目前没有等待你处理的任务",
+      "emptyText": "当前没有需要你决定的交付包。可以发起新任务，或打开项目继续已有工作。"
+    },
+    "recentProjects": {
+      "title": "最近项目",
+      "hint": "最近更新的项目",
+      "emptyTitle": "还没有项目",
+      "emptyText": "当前演示工作区还没有项目。创建第一个项目来组织材料与交付包。",
+      "viewAll": "查看全部项目"
+    },
+    "recentPackages": {
+      "title": "最近交付包",
+      "hint": "全部项目中最近更新的交付包",
+      "emptyTitle": "还没有交付包",
+      "emptyText": "创建交付包后会显示在这里。每个交付包都属于一个项目。",
+      "viewAll": "查看全部项目"
+    },
+    "noProjects": {
+      "title": "当前演示工作区还没有项目",
+      "text": "创建项目可以把材料与交付包放在一起，也可以直接体验三类任务。所有数据都保存在当前浏览器。",
+      "create": "创建第一个项目"
+    },
+    "projectMeta": {
+      "packages": "{{count}} 个交付包",
+      "materials": "{{count}} 份材料",
+      "attention": "{{count}} 项待处理",
+      "updated": "更新于 {{time}}"
+    }
+  },
+  "projects": {
+    "title": "项目",
+    "description": "项目用于归类材料、交付包与已交付版本。可按名称、编号或描述搜索。",
+    "create": "创建项目",
+    "searchPlaceholder": "搜索名称、编号或描述",
+    "count": "共 {{count}} 个项目",
+    "noMatchTitle": "没有匹配的项目",
+    "noMatchText": "没有项目符合当前搜索条件。清除搜索即可查看全部项目。",
+    "clearSearch": "清除搜索",
+    "emptyTitle": "还没有项目",
+    "emptyText": "创建第一个项目，开始在当前演示工作区中组织材料与交付包。",
+    "noDescription": "暂无描述",
+    "open": "打开项目",
+    "packages": "交付包",
+    "materials": "材料",
+    "attention": "待你处理",
+    "versions": "正式版本",
+    "members": "成员",
+    "updated": "最近更新",
+    "more": "更多操作"
+  },
+  "project": {
+    "crumbHome": "工作台",
+    "crumbProjects": "项目",
+    "notFoundTitle": "未找到项目",
+    "notFoundText": "该项目不存在，或已不在当前演示数据中。",
+    "backToProjects": "返回项目列表",
+    "rename": "重命名项目",
+    "newTask": "新建任务",
+    "createPackage": "创建交付包",
+    "tabs": {
+      "overview": "概览",
+      "packages": "交付包",
+      "materials": "材料",
+      "graph": "成果关系图"
+    },
+    "tabsLabel": "项目标签页",
+    "loadingGraph": "正在加载成果关系图…",
+    "meta": {
+      "code": "项目编号",
+      "members": "成员",
+      "updated": "最近更新"
+    },
+    "stats": {
+      "packages": "交付包",
+      "materials": "材料",
+      "attention": "待你处理",
+      "versions": "正式版本"
+    },
+    "taskbarTitle": "在本项目中发起任务",
+    "taskbarHint": "项目已预先选定，向导会继续询问其余输入。",
+    "attentionTitle": "待你处理",
+    "attentionEmptyTitle": "目前没有等待你处理的任务",
+    "attentionEmptyText": "本项目没有需要你决定的交付包。",
+    "recentPackagesTitle": "最近交付包",
+    "recentPackagesEmptyTitle": "还没有交付包",
+    "recentPackagesEmptyText": "可为该项目创建生成与修改、独立审查或版本比对任务。",
+    "materialsTitle": "项目材料",
+    "materialsHint": "共 {{count}} 份材料",
+    "materialsEmptyTitle": "还没有材料",
+    "materialsEmptyText": "添加材料后，审查与比对任务才有可读输入。",
+    "openMaterials": "进入材料",
+    "relationsTitle": "成果关系",
+    "relationsHint": "只有交付包交付正式版本后，关系才会显示。",
+    "relationsCount": "{{count}} 条关系",
+    "relationsEmptyTitle": "还没有关系",
+    "relationsEmptyText": "交付正式版本后，会产生审查、修订或比对关系。",
+    "openGraph": "打开关系图",
+    "relationIncoming": "来源关系",
+    "relationOutgoing": "后续关系"
+  },
+  "packagesTab": {
+    "searchPlaceholder": "搜索交付包编号或标题",
+    "kindFilter": "任务类型",
+    "statusFilter": "状态",
+    "allKinds": "全部类型",
+    "allStatuses": "全部状态",
+    "count": "{{visible}} / {{total}} 个交付包",
+    "columns": {
+      "code": "编号",
+      "title": "交付包",
+      "kind": "类型",
+      "status": "状态",
+      "version": "当前正式版本",
+      "relations": "来源数",
+      "updated": "最近更新",
+      "actions": "操作"
+    },
+    "noVersion": "无正式版本",
+    "relationsCount": "{{count}} 条来源关系",
+    "emptyTitle": "本项目还没有交付包",
+    "emptyText": "创建交付包即可发起任务。每个交付包独立维护自己的阶段、版本与关系。",
+    "noMatchTitle": "没有匹配的交付包",
+    "noMatchText": "没有交付包符合当前筛选条件。",
+    "resetFilters": "重置筛选"
+  },
+  "materials": {
+    "add": "添加材料",
+    "searchPlaceholder": "搜索材料名称或说明",
+    "kindFilter": "材料类型",
+    "usageFilter": "用途",
+    "allKinds": "全部类型",
+    "allUsages": "全部用途",
+    "count": "{{visible}} / {{total}} 份材料",
+    "columns": {
+      "name": "材料",
+      "kind": "类型",
+      "usage": "用途",
+      "origin": "来源 / 版本",
+      "parse": "解析状态",
+      "updated": "最近更新",
+      "actions": "操作"
+    },
+    "versionLabel": "v{{number}} · {{count}} 个版本",
+    "versionSingle": "v{{number}}",
+    "generatedBy": "由 {{code}} 生成",
+    "actions": {
+      "preview": "预览",
+      "addVersion": "添加新版本",
+      "delete": "删除",
+      "more": "更多操作"
+    },
+    "addVersion": {
+      "title": "添加新版本？",
+      "text": "将新增一个版本并设为当前版本；旧版本会保留在版本历史中。",
+      "ok": "添加版本",
+      "done": "已添加材料新版本，等待解析。"
+    },
+    "delete": {
+      "title": "删除该材料？",
+      "text": "材料将从项目中移除。已引用它的历史交付版本不会被删除，但相关引用会显示为不可访问。",
+      "ok": "删除材料",
+      "done": "材料已删除"
+    },
+    "emptyTitle": "本项目还没有材料",
+    "emptyText": "生成任务可以先无材料开始；审查与比对任务需要可读材料。",
+    "noMatchTitle": "没有匹配的材料",
+    "noMatchText": "没有材料符合当前搜索与筛选条件。",
+    "resetFilters": "重置筛选",
+    "drawer": {
+      "title": "材料详情",
+      "close": "关闭",
+      "metaKind": "类型",
+      "metaUsage": "用途",
+      "metaOrigin": "来源",
+      "metaVersion": "当前版本",
+      "metaFileName": "文件名",
+      "metaSize": "文件大小",
+      "metaAdded": "添加时间",
+      "metaUpdated": "最近更新",
+      "metaUsageNote": "用途说明",
+      "noUsageNote": "暂无用途说明",
+      "parseTitle": "解析状态",
+      "partialTitle": "仅部分解析",
+      "partialText": "该文件只有部分内容可提取。作为依据前请先阅读解析说明。",
+      "failedTitle": "无法读取内容",
+      "pendingTitle": "暂无可读内容",
+      "failedText": "该版本解析失败，因此不显示内容。演示环境不解析真实文件。",
+      "pendingText": "该版本尚未解析。演示环境不上传、不解析文件，因此没有可读内容。",
+      "parsingText": "演示环境中解析仍在进行，暂时没有可读内容。",
+      "noDocumentText": "该版本没有附带可读文档。",
+      "simulateTitle": "演示解析操作",
+      "simulateHint": "以下按钮只修改本地模拟解析状态，不上传文件、不执行真实解析。",
+      "simulateParsed": "模拟解析完成",
+      "simulateFailed": "模拟标记解析失败",
+      "simulateParsedDone": "解析状态已改为已解析（模拟）",
+      "simulateFailedDone": "解析状态已改为解析失败（模拟）",
+      "versionHistory": "版本历史",
+      "current": "当前"
+    },
+    "addModal": {
+      "title": "添加材料",
+      "name": "材料名称",
+      "namePlaceholder": "例如：需求说明书 V1.2",
+      "nameRequired": "材料名称为必填项",
+      "kind": "材料类型",
+      "usage": "用途",
+      "usageNote": "用途说明",
+      "usageNotePlaceholder": "该材料为何放入本项目（可选）",
+      "file": "本地文件",
+      "chooseFile": "选择本地文件",
+      "fileChosen": "{{name}} · {{size}}",
+      "clearFile": "清除文件",
+      "uploadHint": "演示环境：仅记录本地文件名称与大小，不上传服务器、不解析文件。",
+      "submit": "添加材料",
+      "done": "材料已添加，首个版本等待解析。"
+    }
+  },
+  "dialog": {
+    "createProject": {
+      "title": "创建项目",
+      "name": "项目名称",
+      "namePlaceholder": "例如：智慧园区技术方案编制",
+      "nameRequired": "项目名称为必填项",
+      "description": "项目描述",
+      "descriptionPlaceholder": "项目用途说明（可选）",
+      "submit": "创建项目",
+      "done": "项目已创建"
+    },
+    "renameProject": {
+      "title": "重命名项目",
+      "name": "项目名称",
+      "nameRequired": "项目名称为必填项",
+      "submit": "保存",
+      "done": "项目已重命名"
+    }
+  },
+  "labels": {
+    "open": "打开"
+  }
+}

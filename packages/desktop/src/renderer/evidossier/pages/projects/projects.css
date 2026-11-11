@@ -1,0 +1,241 @@
+/*
+ * Evidossier project pages styles.
+ * Prefix: .evd-proj-
+ */
+
+/* The routed page is a direct flex child of .evd-main (overflow hidden); the
+   page itself owns its vertical scroll so long workbenches stay reachable. */
+.evd-proj-page {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.evd-proj-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.evd-proj-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.evd-proj-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 16px 8px;
+}
+
+.evd-proj-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.evd-proj-card__name {
+  margin: 0;
+  word-break: break-word;
+}
+
+.evd-proj-card__desc {
+  margin: 0;
+  padding: 0 16px 12px;
+  min-height: 42px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.evd-proj-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--evd-hairline);
+  border-top: 1px solid var(--evd-hairline);
+  border-bottom: 1px solid var(--evd-hairline);
+  margin-top: auto;
+}
+
+.evd-proj-mini {
+  background: var(--evd-canvas);
+  padding: 10px 12px;
+  min-width: 0;
+}
+
+.evd-proj-mini__label {
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evd-proj-mini__value {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.evd-proj-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+  min-width: 0;
+}
+
+.evd-proj-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+/* Package rows shared with the home workbench ----------------------------- */
+
+.evd-proj-rowmain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evd-proj-rowmeta {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Keep meta chips on one line; the version slot reserves space so the
+   "no formal version" placeholder never collapses into vertical text. */
+.evd-proj-rowmeta > * {
+  flex: 0 0 auto;
+}
+
+.evd-proj-version-slot {
+  display: inline-flex;
+  align-items: center;
+  min-width: 92px;
+  white-space: nowrap;
+}
+
+/* Project workspace ------------------------------------------------------- */
+
+.evd-card > .arco-btn.evd-listlink:last-child {
+  border-bottom: 0;
+}
+
+.evd-proj-tabs {
+  margin-bottom: 24px;
+}
+
+.evd-proj-taskbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.evd-proj-material-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  min-width: 0;
+}
+
+.evd-proj-material-row:last-child {
+  border-bottom: 0;
+}
+
+.evd-proj-material-row__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evd-proj-relation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--evd-hairline);
+  border: 1px solid var(--evd-hairline);
+}
+
+.evd-proj-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.evd-proj-table {
+  min-width: 820px;
+}
+
+.evd-proj-table th,
+.evd-proj-table td {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.evd-proj-table th:last-child,
+.evd-proj-table td:last-child {
+  position: sticky;
+  right: 0;
+  background: var(--evd-canvas);
+  box-shadow: -1px 0 0 var(--evd-hairline);
+}
+
+.evd-proj-table th:last-child {
+  background: var(--evd-surface-1);
+}
+
+.evd-proj-cell-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.evd-proj-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.evd-proj-pagination-note {
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .evd-proj-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .evd-proj-card__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .evd-proj-relation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

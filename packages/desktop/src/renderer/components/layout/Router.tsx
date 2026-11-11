@@ -25,6 +25,8 @@ const ComponentsShowcase = React.lazy(() => import('@renderer/pages/TestShowcase
 const ScheduledTasksPage = React.lazy(() => import('@renderer/pages/cron/ScheduledTasksPage'));
 const TaskDetailPage = React.lazy(() => import('@renderer/pages/cron/ScheduledTasksPage/TaskDetailPage'));
 const TeamIndex = React.lazy(() => import('@renderer/pages/team'));
+// Evidossier product surface: Artifact-centered professional workspace.
+const EvidossierApp = React.lazy(() => import('@renderer/evidossier/app/EvidossierApp'));
 
 const withRouteFallback = (Component: React.LazyExoticComponent<React.ComponentType>) => (
   <Suspense fallback={<AppLoader />}>
@@ -60,6 +62,17 @@ const ProtectedLayout: React.FC<{ layout: React.ReactElement }> = ({ layout }) =
   return React.cloneElement(layout);
 };
 
+/**
+ * Auth gate for routes that render their own application shell instead of the
+ * upstream chat layout (currently the Evidossier workspace).
+ */
+const ProtectedOnly: React.FC<{ children: React.ReactElement }> = ({ children }) => {
+  const { status } = useAuth();
+  if (status === 'checking') return <AppLoader />;
+  if (status !== 'authenticated') return <Navigate to='/login' replace />;
+  return children;
+};
+
 const PanelRoute: React.FC<{ layout: React.ReactElement }> = ({ layout }) => {
   const { status } = useAuth();
 
@@ -69,10 +82,21 @@ const PanelRoute: React.FC<{ layout: React.ReactElement }> = ({ layout }) => {
       <Routes>
         <Route
           path='/login'
-          element={status === 'authenticated' ? <Navigate to='/guid' replace /> : withRouteFallback(LoginPage)}
+          element={status === 'authenticated' ? <Navigate to='/evidossier' replace /> : withRouteFallback(LoginPage)}
+        />
+        {/* Evidossier product surface renders its own Carbon workspace shell. */}
+        <Route
+          path='/evidossier/*'
+          element={
+            <ProtectedOnly>
+              <Suspense fallback={<AppLoader />}>
+                <EvidossierApp />
+              </Suspense>
+            </ProtectedOnly>
+          }
         />
         <Route element={<ProtectedLayout layout={layout} />}>
-          <Route index element={<Navigate to='/guid' replace />} />
+          <Route index element={<Navigate to='/evidossier' replace />} />
           <Route path='/guid' element={withRouteFallback(Guid)} />
           <Route path='/conversation/:id' element={withRouteFallback(Conversation)} />
           <Route
@@ -111,7 +135,7 @@ const PanelRoute: React.FC<{ layout: React.ReactElement }> = ({ layout }) => {
           <Route path='/scheduled' element={withRouteFallback(ScheduledTasksPage)} />
           <Route path='/scheduled/:job_id' element={withRouteFallback(TaskDetailPage)} />
         </Route>
-        <Route path='*' element={<Navigate to={status === 'authenticated' ? '/guid' : '/login'} replace />} />
+        <Route path='*' element={<Navigate to={status === 'authenticated' ? '/evidossier' : '/login'} replace />} />
       </Routes>
     </HashRouter>
   );

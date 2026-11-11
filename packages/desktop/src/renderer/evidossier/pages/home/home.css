@@ -1,0 +1,117 @@
+/*
+ * Evidossier workspace home styles.
+ * Prefix: .evd-proj-  (owned by the projects-ui pages)
+ */
+
+/* The routed page is a direct flex child of .evd-main (overflow hidden); the
+   page itself owns its vertical scroll so long workbenches stay reachable. */
+.evd-proj-page {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.evd-proj-entries {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--evd-hairline);
+  border: 1px solid var(--evd-hairline);
+}
+
+.evd-proj-entry {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--evd-canvas);
+}
+
+.evd-proj-entry__main {
+  flex: 1 1 auto;
+  width: 100%;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 16px !important;
+}
+
+.evd-proj-entry__main:hover {
+  background: var(--evd-surface-1) !important;
+}
+
+.evd-proj-entry__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--evd-blue);
+}
+
+.evd-proj-entry__foot {
+  padding: 0 16px 16px;
+}
+
+.evd-proj-home__stats {
+  margin-bottom: 32px;
+}
+
+.evd-proj-home__projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.evd-proj-home__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 8px 0;
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-proj-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.evd-card > .arco-btn.evd-listlink:last-child {
+  border-bottom: 0;
+}
+
+/* Package rows (shared component) — keep meta chips on one line and reserve
+   space so the "no formal version" placeholder never wraps vertically. */
+.evd-proj-rowmeta {
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.evd-proj-rowmeta > * {
+  flex: 0 0 auto;
+}
+
+.evd-proj-version-slot {
+  display: inline-flex;
+  align-items: center;
+  min-width: 92px;
+  white-space: nowrap;
+}
+
+.evd-proj-rowmain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .evd-proj-entries,
+  .evd-proj-home__projects {
+    grid-template-columns: 1fr;
+  }
+}

@@ -22,6 +22,11 @@ import guid from './guid.json';
 import agent from './agent.json';
 import team from './team.json';
 import pet from './pet.json';
+import evidossierCommon from './evidossierCommon.json';
+import evidossierProjects from './evidossierProjects.json';
+import evidossierPackage from './evidossierPackage.json';
+import evidossierReview from './evidossierReview.json';
+import evidossierGraph from './evidossierGraph.json';
 
 export default {
   common,
@@ -43,4 +48,9 @@ export default {
   agent,
   team,
   pet,
+  evidossierCommon,
+  evidossierProjects,
+  evidossierPackage,
+  evidossierReview,
+  evidossierGraph,
 };

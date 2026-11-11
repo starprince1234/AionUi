@@ -1,0 +1,663 @@
+/*
+ * Delivery package workbench layout.
+ *
+ * Only the workspace-specific measurements live here; every color, type and
+ * border token still comes from design/carbon.css. The page owns the vertical
+ * shell (fixed header + filling workbench) so the three-column workspace can
+ * scroll independently from the document-like context panel.
+ */
+
+.evd-pkg-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.evd-pkg-page__head {
+  flex: 0 0 auto;
+  padding: 20px 24px 0;
+  max-height: 48%;
+  overflow-y: auto;
+}
+
+.evd-pkg-page__head .evd-page__header {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.evd-pkg-page__notices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+.evd-pkg-page__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-pkg-cbody {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.evd-pkg-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.evd-pkg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  margin-top: 4px;
+}
+
+.evd-pkg-meta__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-pkg-meta__item strong {
+  font-weight: 600;
+  color: var(--evd-ink);
+}
+
+.evd-pkg-demo-menu {
+  min-width: 260px;
+  padding: 8px 0;
+  background: var(--evd-canvas);
+  border: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-demo-menu__hint {
+  margin: 0;
+  padding: 0 12px 8px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-demo-menu__item {
+  padding: 0 4px;
+}
+
+.evd-pkg-demo-menu__wrap {
+  display: block;
+}
+
+.evd-root .evd-pkg-demo-menu .arco-btn {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 34px;
+  font-size: 13px;
+}
+
+/* Conflict ---------------------------------------------------------------- */
+
+.evd-pkg-conflict {
+  border: 1px solid var(--evd-hairline);
+  border-left: 3px solid var(--evd-error);
+  background: var(--evd-canvas);
+}
+
+.evd-pkg-conflict__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-error-bg);
+  flex-wrap: wrap;
+}
+
+.evd-pkg-conflict__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--evd-hairline);
+}
+
+.evd-pkg-conflict__col {
+  background: var(--evd-canvas);
+  padding: 12px 16px;
+  min-width: 0;
+}
+
+.evd-pkg-conflict__colhead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.evd-pkg-conflict__lines {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--evd-ink);
+}
+
+.evd-pkg-conflict__lines li {
+  margin-bottom: 2px;
+  word-break: break-word;
+}
+
+.evd-pkg-conflict__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-top: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+}
+
+/* Stage workspace --------------------------------------------------------- */
+
+.evd-pkg-workspace {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-pkg-stageheader {
+  flex: 0 0 auto;
+  padding: 14px 24px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-pkg-stageheader__desc {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--evd-ink-muted);
+  max-width: 760px;
+}
+
+.evd-pkg-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.evd-pkg-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 24px 40px;
+}
+
+.evd-pkg-artifact-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  border: 1px solid var(--evd-hairline);
+  border-bottom: 0;
+  background: var(--evd-surface-1);
+}
+
+.evd-pkg-artifact-bar__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.evd-pkg-artifact-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.evd-pkg-editor {
+  border: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+  padding: 16px;
+}
+
+.evd-pkg-editor--flush {
+  padding: 0;
+}
+
+.evd-pkg-editor__section {
+  margin-bottom: 16px;
+}
+
+.evd-pkg-editor__section:last-child {
+  margin-bottom: 0;
+}
+
+/* Fact / outline editing tables ------------------------------------------- */
+
+.evd-pkg-table td {
+  vertical-align: top;
+}
+
+.evd-root .evd-pkg-table .arco-input-wrapper,
+.evd-root .evd-pkg-table .arco-select .arco-select-view {
+  min-height: 32px;
+  background: var(--evd-surface-1);
+}
+
+.evd-pkg-row-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.evd-pkg-outline-section {
+  border: 1px solid var(--evd-hairline);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: var(--evd-canvas);
+}
+
+.evd-pkg-outline-section:last-child {
+  margin-bottom: 0;
+}
+
+.evd-pkg-outline-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 12px;
+}
+
+.evd-pkg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.evd-pkg-field__label {
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-pkg-inline-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Draft editing ----------------------------------------------------------- */
+
+.evd-pkg-draft-section {
+  border-bottom: 1px solid var(--evd-hairline);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.evd-pkg-draft-section:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.evd-pkg-draft-heading {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.evd-pkg-draft-paragraph {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.16px;
+  color: var(--evd-ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.evd-pkg-change-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.evd-pkg-previous {
+  margin: 0 0 8px;
+  padding: 6px 10px;
+  border-left: 3px solid var(--evd-surface-3);
+  background: var(--evd-surface-1);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--evd-ink-muted);
+}
+
+.evd-pkg-previous__label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-subtle);
+  margin-bottom: 2px;
+}
+
+.evd-pkg-validation-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-validation-row:last-child {
+  border-bottom: 0;
+}
+
+/* Context panel ----------------------------------------------------------- */
+
+.evd-pkg-panel-tabs {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.evd-pkg-panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evd-pkg-panel-conv {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.evd-pkg-panel-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px 16px 20px;
+}
+
+.evd-pkg-panel-foot {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  border-top: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-panel-section + .evd-pkg-panel-section {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-panel-section__title {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-root .arco-btn.evd-listlink {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--evd-hairline);
+  color: var(--evd-ink);
+}
+
+.evd-root .arco-btn.evd-listlink:hover {
+  background: var(--evd-surface-1);
+  color: var(--evd-ink);
+}
+
+.evd-pkg-listrow__main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.evd-pkg-listrow__title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--evd-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evd-pkg-listrow__sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--evd-ink-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evd-pkg-listrow__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.evd-pkg-endpoint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--evd-ink-muted);
+}
+
+.evd-pkg-relation-sentence {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--evd-ink);
+}
+
+.evd-pkg-version-row--new {
+  background: var(--evd-blue-10);
+  box-shadow: inset 3px 0 0 var(--evd-blue);
+}
+
+.evd-pkg-context {
+  position: relative;
+}
+
+.evd-pkg-ctx {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  background: var(--evd-canvas);
+}
+
+.evd-pkg-tab-count {
+  margin-left: 6px;
+  font-size: 11px;
+  color: var(--evd-ink-subtle);
+  font-weight: 400;
+}
+
+.evd-pkg-conflictwrap {
+  flex: 0 0 auto;
+  padding: 0 24px 12px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.evd-pkg-drawer .arco-drawer-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.evd-pkg-drawer .arco-drawer-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evd-pkg-narrow-only {
+  display: none;
+}
+
+/* Deliverable preview inside the submit dialog ---------------------------- */
+
+.evd-pkg-preview {
+  margin-top: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--evd-hairline);
+  padding: 16px 20px;
+  background: var(--evd-canvas);
+}
+
+.evd-pkg-preview__title {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--evd-hairline);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.evd-pkg-dialog-section {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-pkg-dialog-section:last-child {
+  border-bottom: 0;
+}
+
+.evd-pkg-dialog-section__title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16px;
+}
+
+.evd-pkg-dialog-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--evd-ink);
+}
+
+.evd-pkg-dialog-hint {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-pkg-statline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--evd-ink);
+}
+
+.evd-pkg-error-text {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--evd-error);
+}
+
+.evd-pkg-empty-inline {
+  padding: 8px 0;
+}
+
+/* Responsive -------------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  .evd-pkg-page__head {
+    padding: 16px 20px 0;
+  }
+
+  .evd-pkg-scroll {
+    padding: 14px 20px 32px;
+  }
+
+  .evd-pkg-stageheader {
+    padding: 12px 20px 10px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .evd-pkg-narrow-only {
+    display: inline-flex;
+  }
+
+  .evd-pkg-context {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .evd-pkg-conflict__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evd-pkg-outline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evd-pkg-page__head {
+    max-height: none;
+  }
+
+  .evd-pkg-page {
+    overflow-y: auto;
+  }
+
+  .evd-pkg-page__body {
+    flex: 0 0 auto;
+  }
+
+  .evd-pkg-workspace {
+    flex-direction: column;
+  }
+}

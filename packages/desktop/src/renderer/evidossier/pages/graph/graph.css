@@ -1,0 +1,810 @@
+/*
+ * Artifact graph canvas, page shell and detail panel.
+ *
+ * All selectors are prefixed with `.evd-graph-` and consume the Carbon tokens
+ * declared on `.evd-root` in design/carbon.css (never hardcoded colors).
+ */
+
+/* Page shell (/evidossier/graph) ------------------------------------------ */
+.evd-graph-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 24px 32px;
+}
+
+.evd-graph-page__header {
+  flex: 0 0 auto;
+}
+
+.evd-graph-page__header .evd-page__header {
+  margin-bottom: 16px;
+}
+
+.evd-graph-page__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-graph-page__body > .evd-graph-panel {
+  height: 100%;
+}
+
+.evd-graph-page__project {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.evd-graph-page__select {
+  width: 280px;
+}
+
+/* Graph tab panel ---------------------------------------------------------- */
+.evd-graph-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: clamp(520px, calc(100dvh - 330px), 900px);
+  border: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-graph-panel__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+  flex: 0 0 auto;
+}
+
+.evd-graph-panel__field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.evd-graph-panel__select {
+  width: 216px;
+}
+
+.evd-graph-panel__select--narrow {
+  width: 176px;
+}
+
+.evd-graph-panel__search {
+  width: 216px;
+}
+
+.evd-graph-panel__spacer {
+  flex: 1 1 auto;
+}
+
+.evd-graph-panel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+  flex: 0 0 auto;
+}
+
+.evd-graph-panel__main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-graph-panel__canvas {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.evd-graph-panel__details {
+  flex: 0 0 320px;
+  width: 320px;
+  min-height: 0;
+  overflow-y: auto;
+  border-left: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+/* Canvas ------------------------------------------------------------------- */
+.evd-graph-view {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.evd-graph-view__canvas-wrap {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-graph-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.evd-graph-view--empty {
+  align-items: stretch;
+  justify-content: center;
+}
+
+.evd-graph-empty {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 24px;
+  background: var(--evd-surface-1);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.evd-graph-empty .evd-empty {
+  border: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-graph-toolbar__zoom {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--evd-hairline);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.evd-graph-toolbar__spacer {
+  flex: 1 1 auto;
+}
+
+.evd-root .arco-btn.evd-graph-toolbar__button {
+  border: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+  color: var(--evd-ink);
+  font-size: 12px;
+  padding: 0 8px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.evd-root .arco-btn.evd-graph-toolbar__button:hover {
+  background: var(--evd-surface-1);
+  color: var(--evd-ink);
+}
+
+.evd-root .arco-btn.evd-graph-toolbar__button:focus-visible {
+  box-shadow: var(--evd-focus);
+  outline: none;
+}
+
+.evd-graph-pan-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  max-width: 60%;
+  padding: 4px 10px;
+  border: 1px solid var(--evd-hairline);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--evd-ink-muted);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.evd-graph-canvas .evd-graph__legend {
+  max-width: calc(100% - 140px);
+  row-gap: 6px;
+  z-index: 2;
+}
+
+.evd-graph-legend__title {
+  font-weight: 600;
+  color: var(--evd-ink);
+}
+
+.evd-graph-legend__kind {
+  display: inline-block;
+  width: 3px;
+  height: 12px;
+  background: var(--evd-ink-subtle);
+  flex: 0 0 3px;
+}
+
+.evd-graph-kind--generate {
+  background: var(--evd-blue);
+}
+
+.evd-graph-kind--review {
+  background: var(--evd-ink);
+}
+
+.evd-graph-kind--compare {
+  background: var(--evd-ink-subtle);
+}
+
+.evd-graph-legend__line--reviewed {
+  background: var(--evd-blue);
+}
+
+.evd-graph-legend__line--compared {
+  background: var(--evd-ink);
+}
+
+.evd-graph-legend__line--revised_from {
+  background: repeating-linear-gradient(to right, var(--evd-ink) 0 5px, transparent 5px 8px);
+}
+
+.evd-graph-legend__line--based_on {
+  background: var(--evd-ink-muted);
+}
+
+.evd-graph-legend__line--derived_from {
+  background: repeating-linear-gradient(to right, var(--evd-ink-subtle) 0 2px, transparent 2px 5px);
+}
+
+/* Nodes -------------------------------------------------------------------- */
+.evd-graph-node {
+  cursor: pointer;
+  outline: none;
+}
+
+.evd-graph-node__box {
+  fill: var(--evd-canvas);
+  stroke: var(--evd-surface-3);
+  stroke-width: 1;
+}
+
+.evd-graph-node__kind {
+  fill: var(--evd-ink-subtle);
+}
+
+.evd-graph-node--kind-generate .evd-graph-node__kind {
+  fill: var(--evd-blue);
+}
+
+.evd-graph-node--kind-review .evd-graph-node__kind {
+  fill: var(--evd-ink);
+}
+
+.evd-graph-node--kind-compare .evd-graph-node__kind {
+  fill: var(--evd-ink-subtle);
+}
+
+.evd-graph-node--draft .evd-graph-node__box {
+  stroke-dasharray: 5 3;
+}
+
+.evd-graph-node--current .evd-graph-node__box {
+  stroke: var(--evd-blue);
+}
+
+.evd-graph-node--focus .evd-graph-node__box {
+  stroke: var(--evd-blue);
+  stroke-width: 2;
+}
+
+.evd-graph-node:hover .evd-graph-node__box {
+  stroke: var(--evd-ink);
+}
+
+.evd-graph-node--selected .evd-graph-node__box,
+.evd-graph-node--selected:hover .evd-graph-node__box {
+  stroke: var(--evd-blue);
+  stroke-width: 2;
+}
+
+.evd-graph-node:focus-visible .evd-graph-node__box {
+  stroke: var(--evd-blue);
+  stroke-width: 2;
+}
+
+.evd-graph-node--dimmed {
+  opacity: 0.32;
+}
+
+.evd-graph-node__code {
+  font-family: var(--evd-font-mono);
+  font-size: 11px;
+  letter-spacing: 0;
+  fill: var(--evd-ink-muted);
+  pointer-events: none;
+}
+
+.evd-graph-node__task {
+  font-size: 10px;
+  letter-spacing: 0.32px;
+  fill: var(--evd-ink-muted);
+  pointer-events: none;
+}
+
+.evd-graph-node__title {
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--evd-ink);
+  pointer-events: none;
+}
+
+.evd-graph-node__meta {
+  font-size: 11px;
+  fill: var(--evd-ink-muted);
+  pointer-events: none;
+}
+
+.evd-graph-node__expand {
+  font-size: 13px;
+  fill: var(--evd-ink-subtle);
+  pointer-events: none;
+}
+
+.evd-graph-node__version {
+  font-family: var(--evd-font-mono);
+  font-size: 12px;
+  fill: var(--evd-ink);
+  pointer-events: none;
+}
+
+.evd-graph-node--current .evd-graph-node__version {
+  fill: var(--evd-blue);
+  font-weight: 600;
+}
+
+.evd-graph-node__current-mark {
+  fill: var(--evd-blue);
+}
+
+/* Expanded package groups -------------------------------------------------- */
+.evd-graph-group__box {
+  fill: var(--evd-canvas);
+  stroke: var(--evd-surface-3);
+  stroke-width: 1;
+}
+
+.evd-graph-group__divider {
+  stroke: var(--evd-hairline);
+  stroke-width: 1;
+}
+
+.evd-graph-group__head {
+  cursor: pointer;
+  outline: none;
+}
+
+.evd-graph-group__hit {
+  fill: transparent;
+}
+
+.evd-graph-group__head:hover .evd-graph-group__hit {
+  fill: var(--evd-surface-1);
+}
+
+.evd-graph-group__head:focus-visible .evd-graph-group__hit {
+  stroke: var(--evd-blue);
+  stroke-width: 2;
+}
+
+.evd-graph-group__kind {
+  fill: var(--evd-ink-subtle);
+}
+
+.evd-graph-group--kind-generate .evd-graph-group__kind {
+  fill: var(--evd-blue);
+}
+
+.evd-graph-group--kind-review .evd-graph-group__kind {
+  fill: var(--evd-ink);
+}
+
+.evd-graph-group--kind-compare .evd-graph-group__kind {
+  fill: var(--evd-ink-subtle);
+}
+
+.evd-graph-group__title {
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--evd-ink);
+  pointer-events: none;
+}
+
+.evd-graph-group__toggle {
+  font-size: 14px;
+  fill: var(--evd-ink-muted);
+  pointer-events: none;
+}
+
+.evd-graph-group--dimmed {
+  opacity: 0.32;
+}
+
+/* Edges -------------------------------------------------------------------- */
+.evd-graph-edge {
+  cursor: pointer;
+  outline: none;
+}
+
+.evd-graph-edge__line {
+  fill: none;
+  stroke: var(--evd-ink-subtle);
+  stroke-width: 1.25;
+}
+
+.evd-graph-edge__hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 14;
+}
+
+.evd-graph-edge--reviewed .evd-graph-edge__line {
+  stroke: var(--evd-blue);
+}
+
+.evd-graph-edge--compared .evd-graph-edge__line {
+  stroke: var(--evd-ink);
+}
+
+.evd-graph-edge--revised_from .evd-graph-edge__line {
+  stroke: var(--evd-ink);
+  stroke-dasharray: 5 3;
+}
+
+.evd-graph-edge--based_on .evd-graph-edge__line {
+  stroke: var(--evd-ink-muted);
+}
+
+.evd-graph-edge--derived_from .evd-graph-edge__line {
+  stroke: var(--evd-ink-subtle);
+  stroke-dasharray: 2 3;
+}
+
+.evd-graph-edge:hover .evd-graph-edge__line {
+  stroke-width: 2;
+}
+
+.evd-graph-edge--selected .evd-graph-edge__line,
+.evd-graph-edge--selected:hover .evd-graph-edge__line {
+  stroke: var(--evd-blue);
+  stroke-width: 2;
+}
+
+.evd-graph-edge--dimmed {
+  opacity: 0.24;
+}
+
+.evd-graph-edge__label-bg {
+  fill: var(--evd-canvas);
+}
+
+.evd-graph-edge__label-text {
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  fill: var(--evd-ink-muted);
+  pointer-events: none;
+}
+
+.evd-graph-edge--selected .evd-graph-edge__label-text {
+  fill: var(--evd-blue);
+  font-weight: 600;
+}
+
+.evd-graph-arrow {
+  fill: var(--evd-ink-subtle);
+}
+
+.evd-graph-arrow--reviewed {
+  fill: var(--evd-blue);
+}
+
+.evd-graph-arrow--compared {
+  fill: var(--evd-ink);
+}
+
+.evd-graph-arrow--revised_from {
+  fill: var(--evd-ink);
+}
+
+.evd-graph-arrow--based_on {
+  fill: var(--evd-ink-muted);
+}
+
+.evd-graph-arrow--derived_from {
+  fill: var(--evd-ink-subtle);
+}
+
+/* Accessible node list ----------------------------------------------------- */
+.evd-graph-nodelist {
+  flex: 0 0 auto;
+  max-height: 216px;
+  overflow-y: auto;
+  border-top: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-graph-nodelist__head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.evd-graph-nodelist__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.evd-graph-nodelist__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 12px 2px 0;
+  border-bottom: 1px solid var(--evd-hairline);
+  min-width: 0;
+}
+
+.evd-graph-nodelist__row:last-child {
+  border-bottom: 0;
+}
+
+.evd-root .arco-btn.evd-graph-nodelist__select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--evd-ink);
+  text-align: left;
+}
+
+.evd-root .arco-btn.evd-graph-nodelist__select:hover {
+  background: var(--evd-surface-1);
+  color: var(--evd-ink);
+}
+
+.evd-root .arco-btn.evd-graph-nodelist__select--active,
+.evd-root .arco-btn.evd-graph-nodelist__select--active:hover {
+  background: var(--evd-blue-10);
+  box-shadow: inset 3px 0 0 var(--evd-blue);
+}
+
+.evd-graph-nodelist__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Context menu ------------------------------------------------------------- */
+.evd-graph-context {
+  position: absolute;
+  z-index: 12;
+  min-width: 196px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  background: var(--evd-canvas);
+  border: 1px solid var(--evd-hairline);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.evd-root .arco-btn.evd-graph-context__item {
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--evd-ink);
+}
+
+.evd-root .arco-btn.evd-graph-context__item:hover {
+  background: var(--evd-surface-1);
+  color: var(--evd-ink);
+}
+
+/* Detail panel ------------------------------------------------------------- */
+.evd-graph-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.evd-graph-details__head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 10px 16px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-graph-details__head .evd-h4 {
+  flex: 1 1 auto;
+}
+
+.evd-graph-details__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.evd-graph-details__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.evd-graph-details__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.evd-graph-details__subtitle {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--evd-ink-muted);
+}
+
+.evd-graph-details__tags {
+  flex-wrap: wrap;
+}
+
+.evd-graph-details__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.evd-graph-details__note {
+  margin: 0;
+}
+
+.evd-graph-details__hint-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.evd-graph-details__hint-text {
+  margin: 0;
+}
+
+.evd-graph-details__hint-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--evd-ink-muted);
+}
+
+.evd-graph-details__sub {
+  padding-top: 12px;
+  border-top: 1px solid var(--evd-hairline);
+}
+
+.evd-graph-details__sub-title {
+  margin: 0 0 8px;
+}
+
+.evd-graph-details__relation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evd-graph-details__relation-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.evd-graph-details__relation-type {
+  font-weight: 600;
+}
+
+/* Drawer (compact width) --------------------------------------------------- */
+.evd-graph-drawer .arco-drawer-body {
+  padding: 0;
+}
+
+/* Responsive --------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .evd-graph-page {
+    padding: 16px;
+  }
+
+  .evd-graph-panel__toolbar {
+    gap: 8px 12px;
+    padding: 10px 12px;
+  }
+
+  /* Stack the small field labels above their controls so three filters fit in
+     one row without hiding what each control filters. */
+  .evd-graph-panel__field {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  .evd-graph-panel__field .evd-label {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .evd-graph-panel__select {
+    width: 168px;
+  }
+
+  .evd-graph-panel__select--narrow {
+    width: 156px;
+  }
+
+  .evd-graph-panel__search {
+    width: 168px;
+  }
+
+  .evd-graph-panel__meta {
+    padding: 4px 12px;
+  }
+
+  .evd-graph-pan-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .evd-graph-page__select {
+    width: 200px;
+  }
+
+  .evd-graph-page__header .evd-page__header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .evd-graph-page__header .evd-page__actions {
+    justify-content: flex-start;
+  }
+}

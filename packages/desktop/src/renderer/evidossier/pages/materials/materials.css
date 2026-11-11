@@ -1,0 +1,60 @@
+/*
+ * Evidossier materials panel styles.
+ * Prefix: .evd-proj-
+ */
+
+.evd-proj-mat-table {
+  min-width: 900px;
+}
+
+.evd-proj-mat-table th,
+.evd-proj-mat-table td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Keep row actions reachable when narrow viewports scroll the table. */
+.evd-proj-mat-table th:last-child,
+.evd-proj-mat-table td:last-child {
+  position: sticky;
+  right: 0;
+  background: var(--evd-canvas);
+  box-shadow: -1px 0 0 var(--evd-hairline);
+}
+
+.evd-proj-mat-table th:last-child {
+  background: var(--evd-surface-1);
+}
+
+.evd-proj-version-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-proj-version-row:last-child {
+  border-bottom: 0;
+}
+
+.evd-proj-drawer__doc {
+  max-height: 560px;
+  overflow: auto;
+}
+
+.evd-proj-drawer__doc .evd-doc {
+  padding: 20px 24px 24px;
+  max-width: none;
+}
+
+.evd-proj-field {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .evd-proj-version-row {
+    flex-wrap: wrap;
+  }
+}

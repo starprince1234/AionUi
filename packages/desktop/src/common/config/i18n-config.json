@@ -35,6 +35,11 @@
     "guid",
     "agent",
     "team",
-    "pet"
+    "pet",
+    "evidossierCommon",
+    "evidossierProjects",
+    "evidossierPackage",
+    "evidossierReview",
+    "evidossierGraph"
   ]
 }

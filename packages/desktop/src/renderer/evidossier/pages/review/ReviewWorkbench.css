@@ -1,0 +1,502 @@
+/*
+ * Independent review workbench.
+ * Scoped under `.evd-rv-` classes; colors/tokens come from carbon.css.
+ */
+
+.evd-rv {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  background: var(--evd-canvas);
+}
+
+/* --- Top bar ------------------------------------------------------------- */
+
+.evd-rv__top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+  flex-wrap: wrap;
+}
+
+.evd-rv__top-main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 420px;
+}
+
+.evd-rv__targetline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.evd-rv__targetname {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.16px;
+  color: var(--evd-ink);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 520px;
+}
+
+.evd-rv__metaline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.evd-rv__stages {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.evd-rv__stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+  font-size: 12px;
+  letter-spacing: 0.32px;
+  color: var(--evd-ink);
+  white-space: nowrap;
+}
+
+.evd-rv__stage--current {
+  border-color: var(--evd-blue);
+  background: var(--evd-blue-10);
+}
+
+.evd-rv__stage-index {
+  font-family: var(--evd-font-mono);
+  font-size: 10px;
+  color: var(--evd-ink-muted);
+}
+
+.evd-rv__stage-name {
+  font-size: 12px;
+  color: var(--evd-ink);
+}
+
+.evd-rv__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* --- Notices ------------------------------------------------------------- */
+
+.evd-rv__notify {
+  flex: 0 0 auto;
+  padding: 8px 20px 0;
+}
+
+.evd-rv__bannerwrap {
+  flex: 0 0 auto;
+  padding: 8px 20px;
+}
+
+.evd-rv__exec {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 20px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+  flex-wrap: wrap;
+}
+
+.evd-rv__exec-activity {
+  min-width: 0;
+  flex: 1 1 200px;
+}
+
+.evd-rv__exec-failure {
+  color: var(--evd-error);
+}
+
+/* --- Body / panes -------------------------------------------------------- */
+
+.evd-rv__body {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.evd-rv__left {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  flex: 0 0 320px;
+  min-height: 0;
+  border-right: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-rv__center {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+.evd-rv__right {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  flex: 0 0 360px;
+  min-height: 0;
+  border-left: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-rv__right-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.evd-rv__scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.evd-rv__pane-pad {
+  padding: 16px;
+}
+
+.evd-rv__findings-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.evd-rv__filters {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-rv__listhead {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+}
+
+.evd-rv__listcount {
+  margin-left: auto;
+}
+
+/* --- Document header ----------------------------------------------------- */
+
+.evd-rv__dochead {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+}
+
+.evd-rv__dochead-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.evd-rv__docscroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  background: var(--evd-canvas);
+}
+
+.evd-rv__nodoc {
+  padding: 32px 20px;
+}
+
+/* --- Coverage ------------------------------------------------------------ */
+
+.evd-rv__covstats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 8px 0 16px;
+}
+
+.evd-rv__covitem {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-rv__covitem-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.evd-rv__covitem-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  min-width: 0;
+  flex: 1 1 140px;
+}
+
+.evd-rv__covitem-note {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--evd-ink-muted);
+}
+
+.evd-rv__covitem-findings {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* --- Findings list ------------------------------------------------------- */
+
+.evd-rv__finding-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+  background: var(--evd-canvas);
+}
+
+.evd-rv__finding-row--active {
+  background: var(--evd-blue-10);
+  box-shadow: inset 3px 0 0 var(--evd-blue);
+}
+
+.evd-root .arco-btn.evd-rv__finding-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  white-space: normal;
+  text-align: left;
+}
+
+.evd-rv__finding-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.evd-rv__finding-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--evd-ink);
+}
+
+.evd-rv__finding-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--evd-ink-muted);
+  max-width: 100%;
+}
+
+/* --- Footer action bar --------------------------------------------------- */
+
+.evd-rv__footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--evd-hairline);
+  background: var(--evd-surface-1);
+}
+
+/* --- Fields -------------------------------------------------------------- */
+
+.evd-rv__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.evd-rv__field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.evd-rv__fields dd {
+  margin: 0;
+}
+
+.evd-rv__bullets {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--evd-ink);
+}
+
+.evd-rv__bullets li {
+  margin-bottom: 4px;
+}
+
+/* --- Detail -------------------------------------------------------------- */
+
+.evd-rv__detail-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.evd-rv__detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--evd-hairline);
+}
+
+/* --- Basis --------------------------------------------------------------- */
+
+.evd-rv__basisitem {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+.evd-rv__basisitem-name {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.evd-rv__basisitem-tags {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* --- Artifact history ---------------------------------------------------- */
+
+.evd-rv__artifact {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--evd-hairline);
+}
+
+/* --- Modals -------------------------------------------------------------- */
+
+.evd-rv__modalblock {
+  margin-top: 16px;
+}
+
+.evd-rv__reportmodal {
+  max-height: 64vh;
+  overflow-y: auto;
+  border: 1px solid var(--evd-hairline);
+}
+
+/* --- Drawer content ------------------------------------------------------ */
+
+.evd-rv__drawer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+/* --- Narrow screens ------------------------------------------------------ */
+
+@media (max-width: 1439px) {
+  .evd-rv__left {
+    width: 280px;
+    flex-basis: 280px;
+  }
+
+  .evd-rv__right {
+    width: 320px;
+    flex-basis: 320px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .evd-rv__top {
+    padding: 10px 12px;
+  }
+
+  .evd-rv__notify {
+    padding: 8px 12px 0;
+  }
+
+  .evd-rv__bannerwrap {
+    padding: 8px 12px;
+  }
+
+  .evd-rv__exec {
+    padding: 6px 12px;
+  }
+
+  .evd-rv__dochead {
+    padding: 8px 12px;
+  }
+
+  .evd-rv__targetname {
+    max-width: 100%;
+    white-space: normal;
+  }
+}

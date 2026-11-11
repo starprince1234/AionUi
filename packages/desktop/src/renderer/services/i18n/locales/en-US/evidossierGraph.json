@@ -1,0 +1,260 @@
+{
+  "page": {
+    "title": "Artifact graph",
+    "description": "Read-only business lineage between package versions: every edge points from a source version to the exact version that used it. Relations are created by review, comparison and revision actions; dragging only pans the canvas.",
+    "projectLabel": "Project",
+    "openProject": "Open project",
+    "noProjectsTitle": "No projects yet",
+    "noProjectsText": "The artifact graph is built from delivered package versions inside a project.",
+    "viewProjects": "View projects",
+    "noProjectSelected": "Select a project to view its artifact graph."
+  },
+  "toolbar": {
+    "relationTypes": "Relations",
+    "taskTypes": "Task types",
+    "searchLabel": "Find package",
+    "searchPlaceholder": "Package code or title",
+    "searchMatches": "{{count}} matching packages",
+    "searchNoMatch": "No matching package",
+    "expandAll": "Expand all versions",
+    "collapseAll": "Collapse all versions",
+    "resetFilters": "Reset filters & expansion",
+    "counts": "{{packages}} packages · {{versions}} versions · {{relations}} relations",
+    "canvasCounts": "{{nodes}} nodes · {{edges}} edges on canvas",
+    "graphHint": "Source version → target version. Relations only come from business actions and cannot be changed by dragging.",
+    "graphHintShort": "Read-only lineage"
+  },
+  "canvas": {
+    "aria": "Artifact relation canvas",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit to view",
+    "center": "Center the graph",
+    "centerShort": "Center",
+    "showNodeList": "Node list",
+    "hideNodeList": "Hide node list",
+    "nodeList": "Accessible node list",
+    "nodeListHint": "The same nodes as a keyboard-accessible list.",
+    "relationLegend": "Relations",
+    "taskLegend": "Task types",
+    "contextMenu": "Node actions",
+    "panHint": "Drag to pan · scroll to zoom · relations are read-only"
+  },
+  "node": {
+    "packageAria": "Package {{code}}, {{title}}, {{count}} versions",
+    "versionAria": "Version {{label}} of package {{code}}",
+    "versionMeta": "{{count}} versions · current {{version}}",
+    "versionMetaNoCurrent": "{{count}} versions · no formal version yet",
+    "versionNode": "Version",
+    "open": "Open",
+    "openAria": "Open {{label}}",
+    "expandVersions": "Show versions",
+    "collapseVersionsAria": "Hide versions of {{code}}",
+    "noVersionsHint": "This package has no formal version yet, so there is nothing to expand."
+  },
+  "edge": {
+    "aria": "{{source}} {{relation}} {{target}}"
+  },
+  "create": {
+    "revise": "Start revision from this version",
+    "review": "Start review from this version",
+    "compare": "Compare from this version"
+  },
+  "details": {
+    "title": "Details",
+    "close": "Close details",
+    "emptyTitle": "Select a node or relation",
+    "emptyText": "Read exact endpoints, scope and time. Opening a package or version never changes the selected snapshot.",
+    "hintDirection": "Edges always point from source version to target version.",
+    "hintReadonly": "Relations are read-only facts; dragging only pans the canvas.",
+    "hintExpand": "Show the versions of a package to read v1, v2 … and their exact endpoints.",
+    "packageTitle": "Package",
+    "versionTitle": "Version",
+    "edgeTitle": "Relation",
+    "source": "Source version",
+    "target": "Target version",
+    "relationCount": "Recorded relations",
+    "aggregatedRelations": "This edge aggregates {{count}} relations. Exact endpoints may differ:",
+    "endpointUnavailable": "A recorded endpoint version is no longer available. The relation keeps its reference, but the content cannot be opened.",
+    "edgeNote": "Opening an endpoint does not change the relation or this snapshot.",
+    "openSource": "Open source",
+    "openTarget": "Open target",
+    "openSourcePackage": "Open source package",
+    "openTargetPackage": "Open target package",
+    "openPackage": "Open package",
+    "openVersion": "Open this version",
+    "taskKind": "Task type",
+    "project": "Project",
+    "currentVersion": "Current formal version",
+    "noVersion": "No formal version",
+    "versionCount": "Formal versions",
+    "updatedAt": "Last updated",
+    "lastSubmitted": "Last submitted",
+    "changeNote": "Change note",
+    "baseVersion": "Based on version",
+    "submittedAt": "Submitted",
+    "submittedBy": "Submitted by",
+    "status": "Status",
+    "current": "Current",
+    "none": "None",
+    "unavailable": "This object is not available in the current data.",
+    "branchHint": "Branch actions pre-select this exact version in the create wizard."
+  },
+  "empty": {
+    "title": "No artifact relations yet",
+    "text": "Relations are created by independent review, version comparison or explicit revision. This project has no related packages yet.",
+    "startReview": "Start a review",
+    "viewPackages": "View packages"
+  },
+  "emptyFiltered": {
+    "title": "No relation matches the current filters",
+    "text": "Clear a filter or reset all filters to see the project graph again."
+  },
+  "emptyPackages": {
+    "title": "This project has no packages yet",
+    "text": "Create a generation package first; review and comparison packages will then connect exact versions in this graph.",
+    "create": "Create a package",
+    "viewPackages": "View packages"
+  },
+  "emptyProject": {
+    "title": "Project not found",
+    "text": "This project does not exist or is no longer available in the demo data.",
+    "back": "Back to projects"
+  },
+  "payload": {
+    "factItems": "{{count}} fact items",
+    "openQuestions": "Open questions",
+    "openItems": "Open items",
+    "partialDraft": "This draft is a partial working state.",
+    "paragraphCount": "{{count}} paragraphs",
+    "coverageChecked": "Coverage checked",
+    "coverageUnchecked": "Not checked",
+    "coverageUncheckable": "Cannot check",
+    "findingTotal": "Findings",
+    "limitations": "Limitations",
+    "reviewedVersion": "Reviewed {{code}} · {{label}}",
+    "unmatchedBase": "Unmatched (baseline side)",
+    "unmatchedTarget": "Unmatched (target side)",
+    "added": "Added",
+    "removed": "Removed",
+    "modified": "Modified",
+    "uncertain": "Cannot confirm",
+    "comparisonInput": "{{role}} input: {{code}} · {{label}}",
+    "outlineStatus": {
+      "planned": "Planned",
+      "confirmed": "Confirmed",
+      "needs_review": "Needs review"
+    }
+  },
+  "versionPage": {
+    "projectFallback": "Project",
+    "notFoundTitle": "Version not found or unavailable",
+    "notFoundText": "This version does not exist, does not belong to the package, or is no longer available in the demo data.",
+    "backToPackage": "Back to package",
+    "backToProjects": "Back to projects",
+    "continueEditDone": "Working draft created from {{label}}",
+    "meta": {
+      "submittedAt": "Submitted",
+      "submittedBy": "Submitted by",
+      "baseVersion": "Based on version",
+      "project": "Project",
+      "package": "Package",
+      "latest": "Latest formal version",
+      "none": "None"
+    },
+    "readonly": {
+      "title": "Read-only snapshot",
+      "text": "Delivered versions are immutable: inputs, stage results and the deliverable are frozen here. To change the delivery, continue editing to create a new working draft.",
+      "partialTitle": "Partial delivery snapshot",
+      "partialText": "This version was submitted as a partial delivery. The unfinished scope is recorded and the snapshot stays immutable.",
+      "historicalHint": "This is not the latest formal version ({{latest}}). This snapshot stays unchanged."
+    },
+    "actions": {
+      "continueEdit": "Continue editing this delivery",
+      "startReview": "Start review from this version",
+      "compare": "Compare versions"
+    },
+    "tabs": {
+      "aria": "Version snapshot sections",
+      "deliverable": "Deliverable",
+      "inputs": "Inputs",
+      "artifacts": "Stage results",
+      "confirmations": "Confirmations",
+      "relations": "Sources & follow-ups"
+    },
+    "deliverable": {
+      "title": "Delivered file",
+      "hint": "The frozen deliverable of this version.",
+      "download": "Download",
+      "downloadDemo": "Demo mode does not provide real file downloads. The readable preview on this page is the demo content.",
+      "fileName": "File name",
+      "formatLabel": "Format",
+      "kindLabel": "Deliverable type",
+      "pages": "Pages",
+      "simulated": "Demo environment does not generate real files. The readable content below previews the frozen snapshot.",
+      "noDocumentTitle": "No readable preview",
+      "noDocumentText": "This deliverable has no readable document in the demo data.",
+      "readonlySuffix": "Read-only preview of this delivered version",
+      "format": {
+        "docx": "DOCX",
+        "pdf": "PDF",
+        "md": "Markdown",
+        "report": "Report"
+      },
+      "kind": {
+        "document": "Document",
+        "review_report": "Review report",
+        "comparison_report": "Comparison report"
+      }
+    },
+    "inputs": {
+      "title": "Frozen inputs",
+      "hint": "Exact material versions recorded at delivery time. Unavailable sources are explicitly marked and were not treated as verified.",
+      "emptyTitle": "No inputs recorded",
+      "emptyText": "This version did not record material inputs.",
+      "material": "Material",
+      "version": "Version",
+      "usage": "Usage",
+      "availability": "Availability",
+      "unavailable": "Source unavailable",
+      "noReadableBody": "No readable body",
+      "unavailableNote": "{{count}} recorded input(s) cannot be resolved in the demo data. They are shown as unavailable and are not counted as verified evidence."
+    },
+    "artifacts": {
+      "title": "Stage results included in this snapshot",
+      "hint": "Frozen references to stage artifacts at the revision used by this delivery.",
+      "emptyTitle": "No stage results",
+      "emptyText": "This version did not include stage artifacts.",
+      "revision": "Revision {{revision}}",
+      "snapshotRef": "Snapshot reference",
+      "expand": "Show summary",
+      "collapse": "Hide summary",
+      "notAvailable": "This artifact no longer exists in the current data; the version keeps only the frozen reference.",
+      "supersededNote": "This revision was later replaced by a newer revision. This snapshot still references the revision that was delivered."
+    },
+    "confirmations": {
+      "title": "Recorded confirmations",
+      "hint": "Key user confirmations frozen together with this version.",
+      "emptyTitle": "No confirmations recorded",
+      "emptyText": "This version does not record any user confirmation."
+    },
+    "relations": {
+      "title": "Sources and follow-ups",
+      "hint": "Exact version-level relations around this snapshot. Opening an endpoint does not change this version.",
+      "viewGraph": "View in artifact graph",
+      "openCounterpart": "Open",
+      "openCounterpartPackage": "Open package",
+      "unavailable": "Not accessible",
+      "scopePrefix": "Scope",
+      "noneIncoming": "No recorded source relations.",
+      "noneOutgoing": "No recorded follow-up relations.",
+      "emptyTitle": "No relations",
+      "emptyText": "This version has no recorded cross-package relations yet."
+    },
+    "continueEdit": {
+      "title": "Create a working draft from this version?",
+      "text": "A new working draft will be created in package {{code}} based on {{label}}. The delivered version stays unchanged; submitting the draft creates the next formal version.",
+      "historyHint": "{{label}} is not the latest formal version ({{latest}}). Continuing creates a new draft based on {{label}}; the latest formal version is not affected."
+    }
+  }
+}

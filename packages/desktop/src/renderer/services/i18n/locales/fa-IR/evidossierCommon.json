@@ -1,0 +1,379 @@
+{
+  "brand": {
+    "name": "Evidossier",
+    "suffix": "Artifact workspace",
+    "tagline": "Professional material workspace built around delivered artifacts"
+  },
+  "demo": {
+    "chip": "Demo mode",
+    "bannerTitle": "Demo environment — data is simulated",
+    "bannerText": "All packages, materials, findings and reports on this page are local demo data. The AI execution is simulated in the browser: it does not call Codex, does not upload files and does not parse real documents.",
+    "executionSimulated": "Simulated execution",
+    "mockArtifact": "Simulated stage output",
+    "mockReport": "Simulated report",
+    "savedLocally": "Demo state is saved in this browser",
+    "reset": "Reset demo data",
+    "resetConfirmTitle": "Reset demo data?",
+    "resetConfirmText": "All changes you made in this demo (new packages, edited artifacts, submitted versions) will be discarded and the seed scenario restored. This action cannot be undone.",
+    "resetDone": "Demo data reset to the seed scenario",
+    "seedLabel": "Seed scenario"
+  },
+  "nav": {
+    "home": "Workspace home",
+    "projects": "Projects",
+    "recentPackages": "Recent packages",
+    "projectOverview": "Project overview",
+    "packages": "Packages",
+    "materials": "Materials",
+    "graph": "Artifact graph",
+    "backToProjects": "All projects",
+    "workspace": "Workspace",
+    "demandAttention": "Needs attention",
+    "allTasks": "All tasks"
+  },
+  "taskKind": {
+    "generate": "Generate & revise",
+    "review": "Independent review",
+    "compare": "Version comparison",
+    "generateShort": "Generate",
+    "reviewShort": "Review",
+    "compareShort": "Compare"
+  },
+  "status": {
+    "package": {
+      "draft": "Draft",
+      "in_progress": "In progress",
+      "awaiting_user": "Awaiting your decision",
+      "paused": "Paused",
+      "failed": "Execution failed",
+      "delivered": "Delivered",
+      "pending_supplement": "Pending input"
+    },
+    "stage": {
+      "not_started": "Not started",
+      "running": "Running",
+      "awaiting_confirmation": "Awaiting confirmation",
+      "completed": "Completed",
+      "needs_review": "Needs review",
+      "failed": "Failed"
+    },
+    "artifact": {
+      "candidate": "Candidate",
+      "pending_confirmation": "Pending confirmation",
+      "confirmed": "Confirmed",
+      "needs_review": "Needs review",
+      "failed": "Failed",
+      "superseded": "Superseded"
+    },
+    "execution": {
+      "idle": "Idle",
+      "running": "Running",
+      "paused": "Paused",
+      "failed": "Failed",
+      "completed": "Completed"
+    },
+    "version": {
+      "delivered": "Delivered",
+      "partial": "Partial delivery"
+    },
+    "parse": {
+      "parsed": "Parsed",
+      "parsing": "Parsing",
+      "failed": "Parse failed",
+      "partial": "Partially parsed",
+      "pending": "Awaiting parse"
+    },
+    "coverage": {
+      "checked": "Checked",
+      "unchecked": "Not checked",
+      "uncheckable": "Cannot check",
+      "not_applicable": "Not applicable"
+    },
+    "mapping": {
+      "confirmed": "Confirmed match",
+      "candidate": "Candidate match",
+      "uncertain": "Uncertain",
+      "none": "No match"
+    },
+    "diff": {
+      "added": "Added",
+      "removed": "Removed",
+      "modified": "Modified",
+      "moved": "Moved",
+      "uncertain": "Cannot confirm"
+    },
+    "fact": {
+      "confirmed": "Confirmed",
+      "pending": "To confirm",
+      "conflict": "Conflict",
+      "missing": "Missing"
+    },
+    "finding": {
+      "open": "Open",
+      "confirmed": "Confirmed",
+      "uncertain": "Uncertain"
+    },
+    "validation": {
+      "pass": "Passed",
+      "warn": "Warning",
+      "fail": "Failed",
+      "manual": "Manual check required",
+      "not_checked": "Not checked"
+    },
+    "severity": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "info": "Info"
+    }
+  },
+  "relation": {
+    "reviewed": "reviewed",
+    "compared": "compared",
+    "revised_from": "revised from",
+    "based_on": "based on",
+    "derived_from": "derived from",
+    "source": "Source",
+    "target": "Target",
+    "incoming": "Where this came from",
+    "outgoing": "What followed",
+    "viewGraph": "View in artifact graph",
+    "sentence": "{{target}} {{relation}} {{source}}",
+    "createdAt": "Created",
+    "scope": "Scope",
+    "exactVersions": "Exact versions"
+  },
+  "comparisonRole": {
+    "baseline": "Baseline",
+    "target": "Target",
+    "additional": "Additional input"
+  },
+  "materialUsage": {
+    "fact": "Task facts",
+    "requirement": "Current requirements",
+    "template": "Template",
+    "style_reference": "Writing reference",
+    "case": "Historical case",
+    "review_basis": "Review basis",
+    "pending": "Usage to confirm"
+  },
+  "materialOrigin": {
+    "uploaded": "Uploaded material",
+    "generated": "Generated artifact"
+  },
+  "materialKind": {
+    "document": "Document",
+    "spreadsheet": "Spreadsheet",
+    "drawing": "Drawing",
+    "image": "Image",
+    "template": "Template",
+    "archive": "Archive"
+  },
+  "action": {
+    "create": "Create",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "saveDraft": "Save draft",
+    "edit": "Edit",
+    "back": "Back",
+    "open": "Open",
+    "close": "Close",
+    "retry": "Retry",
+    "pause": "Pause",
+    "resume": "Resume",
+    "submit": "Submit",
+    "send": "Send",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "viewAll": "View all",
+    "viewDetails": "View details",
+    "openPackage": "Open package",
+    "openVersion": "Open this version",
+    "continueEdit": "Continue editing this version",
+    "startReview": "Start review from this version",
+    "compareVersions": "Compare versions",
+    "submitVersion": "Submit formal version",
+    "startRevision": "Create revision task",
+    "add": "Add",
+    "addMaterial": "Add material",
+    "upload": "Choose local file",
+    "select": "Select",
+    "remove": "Remove",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fitView": "Fit to view",
+    "center": "Center",
+    "refresh": "Refresh",
+    "download": "Download",
+    "copy": "Copy",
+    "rename": "Rename",
+    "more": "More",
+    "clear": "Clear",
+    "apply": "Apply",
+    "continue": "Continue",
+    "goTo": "Go to",
+    "viewSource": "View source",
+    "chooseFromMaterials": "Choose from project materials",
+    "createPackage": "Create package",
+    "startReviewPackage": "Start review",
+    "startComparison": "Start comparison",
+    "submitReport": "Submit report",
+    "createRevisionFromFindings": "Create revision from selected findings",
+    "createRevisionFromDifferences": "Create revision from selected differences",
+    "accept": "Accept",
+    "keepMine": "Keep my edit",
+    "keepCandidate": "Use run result",
+    "rerun": "Re-run on latest input",
+    "resolveConflict": "Resolve conflict",
+    "confirmAndContinue": "Confirm and continue",
+    "submitPartial": "Submit as partial delivery",
+    "resumeFromCheckpoint": "Resume from checkpoint",
+    "endReview": "End review",
+    "endComparison": "End comparison"
+  },
+  "common": {
+    "loading": "Loading…",
+    "loadingWorkspace": "Loading workspace…",
+    "loadFailed": "Failed to load",
+    "empty": "No content yet",
+    "notFound": "Not found",
+    "notFoundText": "The requested object does not exist or is no longer available in this demo.",
+    "version": "Version",
+    "versionNo": "Version {{number}}",
+    "currentVersion": "Current formal version",
+    "workingDraft": "Working draft",
+    "formalVersion": "Formal version",
+    "history": "Version history",
+    "readOnly": "Read-only",
+    "readOnlyHint": "Delivered versions are immutable. Continue editing creates a new working draft.",
+    "updatedAt": "Updated",
+    "createdAt": "Created",
+    "updatedBy": "Updated by",
+    "createdBy": "Created by",
+    "by": "by {{name}}",
+    "none": "None",
+    "unknown": "Unknown",
+    "optional": "Optional",
+    "required": "Required",
+    "simulated": "Simulated",
+    "current": "Current",
+    "inputs": "Inputs",
+    "stageResults": "Stage results",
+    "deliverables": "Deliverables",
+    "summary": "Summary",
+    "status": "Status",
+    "note": "Note",
+    "details": "Details",
+    "actions": "Actions",
+    "all": "All",
+    "noResults": "No matching results",
+    "selectAll": "Select all",
+    "selected": "Selected",
+    "count": "{{count}}",
+    "items": "{{count}} items",
+    "justNow": "Just now",
+    "readMore": "Read more",
+    "showLess": "Show less",
+    "conflict": "Conflict",
+    "fileSize": "{{size}}",
+    "pageCount": "{{count}} pages",
+    "confirmDialog": "Confirm this action",
+    "dismiss": "Dismiss",
+    "you": "You",
+    "demoUser": "Demo user",
+    "group": "Group",
+    "type": "Type",
+    "scope": "Scope",
+    "progress": "Progress",
+    "done": "Done",
+    "pending": "Pending",
+    "lastUpdated": "Last updated",
+    "openInNew": "Open",
+    "prototypeNotice": "This area is part of the frontend V1 demo. Data and AI output are simulated.",
+    "noAdditionalInfo": "No additional information"
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "minutesAgo": "{{count}} min ago",
+    "hoursAgo": "{{count}} h ago",
+    "daysAgo": "{{count}} d ago"
+  },
+  "confirmation": {
+    "recorded": "Confirmation recorded",
+    "by": "Confirmed by {{name}}",
+    "at": "at {{time}}"
+  },
+  "stageName": {
+    "generate": {
+      "goal": "Goal & material understanding",
+      "facts": "Facts & requirements",
+      "retrieval": "Retrieval & selection",
+      "plan": "Outline or change plan",
+      "draft": "Drafting",
+      "validation": "Validation",
+      "delivery": "Delivery"
+    },
+    "review": {
+      "scope": "Scope & material understanding",
+      "basis": "Review basis",
+      "coverage": "Coverage plan",
+      "inspection": "Inspection",
+      "recheck": "Finding re-check",
+      "report": "Report & delivery"
+    },
+    "compare": {
+      "versions": "Versions & scope",
+      "mapping": "Mapping establishment",
+      "extraction": "Difference extraction",
+      "explanation": "Change explanation",
+      "recheck": "Difference re-check",
+      "report": "Report & delivery"
+    }
+  },
+  "stageDescription": {
+    "generate": {
+      "goal": "Clarify what must be delivered and which materials are readable.",
+      "facts": "Collect facts, requirements, conflicts and gaps with sources.",
+      "retrieval": "Select evidence by permission and purpose; record what could not be located.",
+      "plan": "Turn facts and evidence into an outline or a bounded change plan.",
+      "draft": "Produce the working draft or a reviewable local change set.",
+      "validation": "Check requirement coverage, citations, scope and file readability.",
+      "delivery": "Freeze inputs, stage results and the deliverable into a formal version."
+    },
+    "review": {
+      "scope": "Fix the material version, review purpose and readable scope.",
+      "basis": "List applicable requirements, standards and user rules; flag uncertain ones.",
+      "coverage": "Break the scope into checkable items with explicit cannot-check reasons.",
+      "inspection": "Inspect each item and record findings with evidence and locations.",
+      "recheck": "Verify citations, merge duplicates and keep unsupported findings separate.",
+      "report": "Deliver findings, actual coverage, limits and unfinished scope."
+    },
+    "compare": {
+      "versions": "Select exact baseline and target versions, direction and scope.",
+      "mapping": "Establish section, clause and table correspondences with confidence.",
+      "extraction": "Collect added, removed, modified, moved and unmapped changes.",
+      "explanation": "Explain what actually changed without judging it as a defect.",
+      "recheck": "Verify both-side references, coverage and uncertain correspondences.",
+      "report": "Deliver the difference list with frozen inputs, scope and limits."
+    }
+  },
+  "artifactKind": {
+    "fact_list": "Facts & requirements list",
+    "outline": "Outline / change plan",
+    "draft": "Working draft",
+    "validation": "Validation result",
+    "coverage_plan": "Coverage plan",
+    "findings": "Finding list",
+    "review_report": "Review report",
+    "mapping": "Correspondence table",
+    "differences": "Difference list",
+    "comparison_report": "Comparison report"
+  }
+}
